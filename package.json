@@ -1,0 +1,44 @@
+{
+  "name": "fliqq",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "services/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=web",
+    "build:admin": "turbo run build --filter=admin",
+    "build:packages": "turbo run build --filter=ui --filter=shared --filter=sdk",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
+    "db:studio": "turbo run db:studio",
+    "docker:build": "docker-compose -f infrastructure/docker/docker-compose.yml build",
+    "docker:up": "docker-compose -f infrastructure/docker/docker-compose.yml up -d",
+    "docker:down": "docker-compose -f infrastructure/docker/docker-compose.yml down",
+    "k8s:apply": "kubectl apply -f infrastructure/kubernetes/",
+    "db:generate:all": "turbo run db:generate --filter=auth-service --filter=user-service --filter=live-service --filter=chat-service --filter=wallet-service --filter=payment-service --filter=notification-service --filter=recommendation-service --filter=moderation-service --filter=admin-service",
+    "db:push:all": "turbo run db:push --filter=auth-service --filter=user-service --filter=live-service --filter=chat-service --filter=wallet-service --filter=payment-service --filter=notification-service --filter=recommendation-service --filter=moderation-service --filter=admin-service",
+    "db:studio:all": "turbo run db:studio --filter=auth-service --filter=user-service --filter=live-service --filter=chat-service --filter=wallet-service --filter=payment-service --filter=notification-service --filter=recommendation-service --filter=moderation-service --filter=admin-service"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.0",
+    "@types/node": "^20.12.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "npm@10.5.0"
+}
