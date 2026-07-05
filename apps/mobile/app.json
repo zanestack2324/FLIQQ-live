@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Fliqq",
+    "slug": "fliqq",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/splash-logo.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "fliqq",
+    "splash": {
+      "image": "./assets/splash-logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F0F1A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fliqq.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0F0F1A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "package": "com.fliqq.app",
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-image-picker"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0993c9af-c2ed-4c28-ae3e-7a84cb5c63e1"
+      }
+    },
+    "owner": "catalixx"
+  }
+}
