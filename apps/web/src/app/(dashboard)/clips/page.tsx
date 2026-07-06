@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { formatNumber } from '@/lib/utils'
-import { Film, Video, Play, Eye, Scissors, Search } from 'lucide-react'
+import { Film, Video, Play, Eye, Search } from 'lucide-react'
 
 const MOCK_CLIPS = [
   { id: '1', title: 'Ariana hits the high note!', creator: 'ArianaK_Official', views: 12400, duration: '0:32', time: '2 hours ago' },
@@ -39,7 +39,7 @@ export default function ClipsPage() {
           <button key={tab} onClick={() => setActiveTab(tab)}
             className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all ${activeTab === tab ? 'bg-purple-600 text-white' : 'bg-white/5 text-gray-400 hover:text-white'}`}
           >
-            {tab === 'clips' ? <Scissors size={16} /> : <Video size={16} />}
+            {tab === 'clips' ? <Film size={16} /> : <Video size={16} />}
             {tab === 'clips' ? 'Clips' : 'VODs'}
           </button>
         ))}
@@ -54,7 +54,7 @@ export default function ClipsPage() {
         />
       </div>
 
-      <Button fullWidth className="mb-6" icon={<Scissors size={16} />}>
+      <Button fullWidth className="mb-6" icon={<Film size={16} />}>
         {activeTab === 'clips' ? 'Create a Clip' : 'Upload VOD'}
       </Button>
 
