@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>FLIQQ | Live Stream</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-surface {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .gift-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+        }
+        .animate-float-up {
+            animation: floatUp 3s ease-out forwards;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(-200px) translateX(20px) scale(1.5); opacity: 0; }
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#0053db",
+                        "on-primary-fixed": "#25005a",
+                        "primary": "#d2bbff",
+                        "inverse-on-surface": "#332f39",
+                        "surface-variant": "#37333e",
+                        "secondary": "#b4c5ff",
+                        "on-primary-container": "#ede0ff",
+                        "surface-tint": "#d2bbff",
+                        "surface-container-lowest": "#100d16",
+                        "surface-container": "#221e28",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#a15100",
+                        "on-secondary": "#002a78",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#ffe0cd",
+                        "on-error": "#690005",
+                        "on-surface": "#e8dfee",
+                        "background": "#0A0A0F",
+                        "surface": "#15121b",
+                        "on-background": "#e8dfee",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "surface-container-low": "#1d1a24",
+                        "on-surface-variant": "#ccc3d8",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-primary": "#3f008e",
+                        "primary-fixed": "#eaddff",
+                        "tertiary": "#ffb784",
+                        "secondary-fixed": "#dbe1ff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary": "#4f2500",
+                        "outline-variant": "#4a4455",
+                        "outline": "#958da1",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "inverse-surface": "#e8dfee",
+                        "surface-container-high": "#2c2833",
+                        "surface-dim": "#15121b",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-bright": "#3c3742",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#cdd7ff",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "inverse-primary": "#732ee4",
+                        "surface-container-highest": "#37333e",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-secondary-fixed": "#00174b",
+                        "primary-container": "#7c3aed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "unit": "4px",
+                        "xl": "40px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "label-caps": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "chat-msg": ["Inter"],
+                        "headline-lg": ["Geist"],
+                        "title-md": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg overflow-hidden h-screen w-full select-none">
+<!-- Immersive Background Stream -->
+<div class="fixed inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center scale-105 brightness-90" data-alt="A professional live stream setup featuring a charismatic creator in a high-tech gaming studio. The room is bathed in cinematic purple and blue neon lights, with high-end streaming gear and soundproofing panels visible in the background. The creator is engaging with their audience, illuminated by a soft key light that creates a premium, high-energy atmosphere. High-resolution, shallow depth of field, vibrant electric aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqI8ViXjsf_9PdJDVrc4EBxABBG2m1nbVQB74GJGCUX1ETomH1sM6Wbsk_zgPLc57vxxII7xuG2nznoUt0yofMwR1TiANqfu8NBZ2JwX74YIYVeY8rkC5u8SJeGrMMXK2im7mcn32iE7ugbrYDZCdFwmq0pgeM7Sm_m1hJ3MjCRAbOTBVwPEjEHRxE5aCmVJGi2nNG8hhASA8pGrDKyD8w6J6xY8nsOdJH4J82DIu58cW6PgKw823cJQGOg0XPwYpfQlsl1k7UMm4O')"></div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-black/40"></div>
+</div>
+<!-- Top Navigation Layer -->
+<header class="fixed top-0 left-0 w-full p-gutter flex justify-between items-start z-50">
+<!-- Creator Info -->
+<div class="glass-surface p-xs pr-md rounded-full flex items-center gap-sm">
+<div class="relative">
+<img class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="A close-up professional headshot of a stylish creator with a modern aesthetic, wearing high-tech headphones. The lighting is dominated by a split purple and blue neon glow, matching the FLIQQ brand identity. High-detail facial features, soft skin texture, and a confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGNWc5xfm-IUdMM1qOb9XavYX-9c-v380hjDv38pAZfeUX90C0cz_0WJ2agGH3Y3AQtZhroTpWxiqjd_ilsWev6Ito8KVLEFmZi5uFEQMF9JxDFxhBA2-KWfOh_PswmJ8BeNLXyUGYjW0ioG8EJKI0iatNTOtq76A8zWU4ZWNQXSEIU9vWEpOZe4INH2-ugniaW4-70tNII_d-dXqnfKhaf_3D_fi7uuVSzKaXcBE0Db2HeyVf3Ct-4GxqTa8wJ6aU-yT9LK7eQ9x_"/>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-error rounded-full border-2 border-surface flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-body-sm text-white leading-tight">NeonRider_01</span>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">12.4K</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-[10px] px-sm py-1 rounded-full ml-sm hover:scale-105 transition-transform">FOLLOW</button>
+</div>
+<!-- Right Controls -->
+<div class="flex items-center gap-sm">
+<!-- Contributors -->
+<div class="flex -space-x-3 items-center mr-md">
+<img class="w-8 h-8 rounded-full border-2 border-white/20 glass-surface object-cover" data-alt="A stylized 3D avatar of a premium user, featuring metallic textures and glowing neon accents. The character is illuminated by a deep blue light, reflecting a high-status digital identity in a dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-6LKkbw2JztvhtLDSgamSo1DCoVTd5zxf_CgnzN-4skzL0-0yrR_zmQ4xH-7y7N1l5-vqVaIJX19hUWwrrLEVbINC-oZy0ad617gOSp5XhMPoC6Y2Dl3wKh817tkDWLZGNoG2gyjbsRJUIVNXR3nPwEHygWgeynHsgIuYYMP2hoZbzrzxGNps_zdKStzqxN_MckEoQpqR7EomGF2u14AyYkGQizb-KjeH88j12jruVZrhrzVLuAIp8UYHihv07Lgpn-xIZIr2a6Qo"/>
+<img class="w-8 h-8 rounded-full border-2 border-white/20 glass-surface object-cover" data-alt="A sleek digital profile illustration of a tech-savvy viewer, using a palette of vibrant pink and deep violet. The character wears futuristic eyewear that glows with a soft light. High-end digital art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwBX_I0_vs402FiMINHxr9J0WYcVxWMCGGu-B9Z5fmRK6lMslnl2uSMaVrVDCpZAQT1wLtn4_7spTlTRXfQQAY42nS-o9f2MZz_BOG_an3jX8e6tWJAGf3wxnHGF4BsYqavbFxR028ZejmorW8eQM4-a9QBFGIWZOpyWv6X2jKwMkF1Iht08_wTSzGHaXjv7veGHq9X38o_r38sz-Y4jmAIt1__vhG4wdsLKPY7Qqmy_6BsQ2Tv_71M8yrvJuYdR1EU7aIdRD4_8t-"/>
+<img class="w-8 h-8 rounded-full border-2 border-white/20 glass-surface object-cover" data-alt="An abstract cinematic avatar with a holographic finish, representing a top contributor. The visual features fluid shapes and shimmering highlights in electric purple and cyan. Minimalist yet sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxn3ziTSgFvImVW3RXL86T_fu_SDNv7SJbeTejnGLuRyvhHGmdN-rn7LFspABR89OzX1SPINE8N8-OCKQe766xqODowJ4BYHwJmNa0AOXyH4IHbQS8Pir_7wddwUWC8lBBHiOhhQu3sZqdw7W-9Qq6rTbXRGYkjbTKKua0BrlNiWEdkO71KT0DX9nxu7aXr5WNbAodCpoLFZx0u6ZZLhxc2MzxnujjepwcABXnSTVaiMUnzuuepNb0gKMpG8YLTJumCP6oOZpIQrP7"/>
+<div class="w-8 h-8 rounded-full border-2 border-white/20 glass-overlay flex items-center justify-center text-[10px] font-bold text-white">+5</div>
+</div>
+<!-- Close -->
+<button class="glass-surface w-10 h-10 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+</header>
+<!-- Center Overlay: Legendary Dragon Gift -->
+<div class="fixed inset-0 flex items-center justify-center pointer-events-none z-40 opacity-0 transition-opacity duration-500" id="gift-alert">
+<div class="flex flex-col items-center">
+<div class="relative w-72 h-72">
+
+<!-- Fallback/Additional visual for 'Legendary Dragon' -->
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-8xl" style="font-variation-settings: 'FILL' 1;">swords</span>
+</div>
+</div>
+<div class="glass-overlay px-lg py-sm rounded-xl mt-md transform -rotate-1">
+<h3 class="font-display-lg text-headline-lg-mobile text-primary italic">LEGENDARY DRAGON</h3>
+<p class="font-label-caps text-center text-on-primary-container">SENT BY <span class="text-secondary">AeroVibe</span></p>
+</div>
+</div>
+</div>
+<!-- Bottom Interface Layer -->
+<main class="fixed bottom-0 left-0 w-full p-gutter flex flex-col md:flex-row justify-end items-end gap-lg z-50 pointer-events-none">
+<!-- Bottom Left: Chat Scroll -->
+<div class="w-full md:w-[320px] max-h-[353px] flex flex-col gap-sm overflow-y-auto hide-scrollbar pointer-events-auto">
+<!-- System Message -->
+<div class="glass-surface px-md py-sm rounded-2xl rounded-bl-none border-l-4 border-secondary max-w-[90%]">
+<p class="font-chat-msg text-secondary text-[11px] font-bold mb-1">SYSTEM</p>
+<p class="font-chat-msg text-white/90">Welcome to FLIQQ! Be respectful and enjoy the stream. ⚡️</p>
+</div>
+<!-- User Message -->
+<div class="glass-surface px-md py-sm rounded-2xl rounded-bl-none max-w-[85%]">
+<p class="font-chat-msg text-primary text-[11px] font-bold mb-1">Alex_Streamer</p>
+<p class="font-chat-msg text-white/90">That last combo was insane! How did you even see that coming?</p>
+</div>
+<!-- User Message -->
+<div class="glass-surface px-md py-sm rounded-2xl rounded-bl-none max-w-[85%]">
+<p class="font-chat-msg text-secondary text-[11px] font-bold mb-1">PixelQueen</p>
+<p class="font-chat-msg text-white/90">LMAO the dragon gift animation is 🔥🔥🔥</p>
+</div>
+<!-- User Message -->
+<div class="glass-surface px-md py-sm rounded-2xl rounded-bl-none max-w-[85%]">
+<p class="font-chat-msg text-primary text-[11px] font-bold mb-1">CyberNinja</p>
+<p class="font-chat-msg text-white/90">DROP THE PLAYLIST! 🎵</p>
+</div>
+</div>
+<!-- Bottom Right: Interactive Actions -->
+<div class="flex items-center gap-sm w-full md:w-auto pointer-events-auto">
+<!-- Message Input -->
+<div class="flex-1 md:w-64 glass-surface rounded-full flex items-center px-md py-sm">
+<input class="bg-transparent border-none focus:ring-0 text-white placeholder-white/40 font-body-sm w-full" placeholder="Chat..." type="text"/>
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<!-- Floating Hearts Area (Invisible Container) -->
+<div class="absolute bottom-20 right-4 w-20 h-64 pointer-events-none" id="reactions-container"></div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-sm">
+<button class="gift-gradient w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/20 hover:scale-110 transition-transform" id="gift-btn">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">redeem</span>
+</button>
+<button class="glass-surface w-12 h-12 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform" id="like-btn">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+<button class="glass-surface w-12 h-12 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Interactive Elements Scripts -->
+<script>
+        // Trigger legendary dragon animation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const alert = document.getElementById('gift-alert');
+            setTimeout(() => {
+                alert.classList.remove('opacity-0');
+                alert.classList.add('opacity-100');
+                
+                // Hide after 4 seconds
+                setTimeout(() => {
+                    alert.classList.remove('opacity-100');
+                    alert.classList.add('opacity-0');
+                }, 4000);
+            }, 1000);
+        });
+
+        // Floating Hearts Logic
+        const reactionsContainer = document.getElementById('reactions-container');
+        const likeBtn = document.getElementById('like-btn');
+        const colors = ['#d2bbff', '#b4c5ff', '#ffb784', '#7c3aed', '#ffb4ab'];
+
+        function spawnHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('absolute', 'bottom-0', 'animate-float-up', 'material-symbols-outlined');
+            heart.style.left = Math.random() * 60 + 'px';
+            heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+            heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            heart.style.fontVariationSettings = "'FILL' 1";
+            heart.textContent = 'favorite';
+            
+            reactionsContainer.appendChild(heart);
+            
+            // Remove after animation
+            setTimeout(() => heart.remove(), 3000);
+        }
+
+        // Auto spawn some hearts for "liveness"
+        setInterval(spawnHeart, 800);
+
+        // Click to spawn
+        likeBtn.addEventListener('click', () => {
+            for(let i=0; i<5; i++) {
+                setTimeout(spawnHeart, i * 100);
+            }
+        });
+
+        // Simple Gift Button Micro-interaction
+        const giftBtn = document.getElementById('gift-btn');
+        giftBtn.addEventListener('click', () => {
+            giftBtn.classList.add('scale-90');
+            setTimeout(() => giftBtn.classList.remove('scale-90'), 150);
+            
+            // Re-trigger the big gift alert for demo purposes
+            const alert = document.getElementById('gift-alert');
+            alert.classList.remove('opacity-0');
+            alert.classList.add('opacity-100');
+            setTimeout(() => {
+                alert.classList.remove('opacity-100');
+                alert.classList.add('opacity-0');
+            }, 3000);
+        });
+    </script>
+</body></html>

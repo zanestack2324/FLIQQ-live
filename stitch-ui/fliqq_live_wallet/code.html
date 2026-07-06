@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0A0A0F;
+            color: #e8dfee;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-dark {
+            background: rgba(5, 5, 7, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .gradient-brand {
+            background: linear-gradient(135deg, #ff8c00 0%, #ff5e00 100%);
+        }
+        .text-gradient-brand {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffc400 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .coin-glow {
+            filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.4));
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #37333e;
+            border-radius: 10px;
+        }
+        .premium-font {
+            font-family: 'Instrument Serif', serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#ff8c00",
+                      "primary-container": "#ff8c00",
+                      "on-primary": "#ffffff",
+                      "secondary": "#b4c5ff",
+                      "background": "#0A0A0F",
+                      "surface": "#15121b",
+                      "on-surface": "#e8dfee",
+                      "on-surface-variant": "#ccc3d8",
+                      "outline": "#958da1",
+                      "surface-container": "#221e28",
+                      "surface-variant": "#37333e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "unit": "4px",
+                      "sm": "8px",
+                      "xl": "40px",
+                      "md": "16px",
+                      "container-margin": "24px",
+                      "xs": "4px",
+                      "gutter": "16px"
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="text-on-surface overflow-x-hidden">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md flex justify-between items-center px-gutter py-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-lg-mobile cursor-pointer hover:opacity-80 transition-opacity">chevron_left</span>
+<h1 class="premium-font text-3xl font-medium tracking-tight text-gradient-brand">FLIQQ Live</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-primary/30 p-0.5 overflow-hidden transition-opacity duration-200 hover:opacity-80 cursor-pointer">
+<img alt="Creator Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL1_uMW_gPi9YdEHA9ph-bBhlDWRjR-phcZVbsLEVwqwEs8CdO0jTBsWdJ6arwjYThS7WAyDerozhKXQmsx2PlO2Hr6YGag2ztGqt0pBhzVB2RHbYmXwJ3AMWNLx9ojLAvze0HeTnL2qOyBKgF5QOg99bQXOzknYl7pxpzlf8wfJQkyknyTqnjC3Uy_KKjOPikZMIYgMusCsI1B555AN47J253LGldR4-apd3xupgCqWhRpGCEWorr9kKNzaoSXc476VRYakX1MKGV"/>
+</div>
+<span class="material-symbols-outlined text-primary text-headline-lg-mobile cursor-pointer hover:opacity-80 transition-opacity duration-200">notifications</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter max-w-2xl mx-auto space-y-lg">
+<!-- Balance Hero -->
+<section class="glass rounded-2xl p-lg relative overflow-hidden border-primary/10">
+<div class="absolute top-0 right-0 p-lg opacity-5">
+<span class="material-symbols-outlined text-[140px] text-primary" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-[0.2em]">Live Coin Balance</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<h2 class="text-5xl font-extrabold text-primary coin-glow tracking-tight">12,450</h2>
+<span class="text-sm font-bold text-primary/60 uppercase tracking-widest ml-1">COINS</span>
+</div>
+</div>
+</section>
+<!-- Diamond/Creator Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="glass-dark rounded-2xl p-md flex flex-col justify-between border-primary/10">
+<div>
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">DIAMOND BALANCE</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<p class="text-2xl font-bold text-secondary">3,120</p>
+<span class="text-xs text-on-surface-variant/70">≈ $156.00</span>
+</div>
+</div>
+<button class="mt-md w-full py-2.5 rounded-xl glass text-sm font-semibold text-secondary hover:bg-secondary/10 transition-colors border-secondary/20">
+                    Withdraw Earnings
+                </button>
+</div>
+<div class="glass-dark rounded-2xl p-md border-white/5 flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-on-surface-variant mb-1" style="font-variation-settings: 'FILL' 0;">insights</span>
+<p class="text-xs text-on-surface-variant/70 font-medium">Earnings last 30 days</p>
+<p class="text-xl font-bold text-primary">+$840.25</p>
+</div>
+</section>
+<!-- Payment Methods -->
+<section>
+<h3 class="text-[10px] font-bold text-on-surface-variant mb-md uppercase tracking-[0.2em] px-xs">Quick Pay</h3>
+<div class="flex gap-sm overflow-x-auto pb-sm scrollbar-hide">
+<button class="flex-shrink-0 flex items-center gap-sm glass px-md py-3 rounded-xl hover:bg-white/10 transition-all border-white/10">
+<span class="material-symbols-outlined text-on-surface text-xl">apps</span>
+<span class="text-sm font-semibold">Apple Pay</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-sm glass px-md py-3 rounded-xl hover:bg-white/10 transition-all border-white/10">
+<span class="material-symbols-outlined text-on-surface text-xl">google</span>
+<span class="text-sm font-semibold">Google Pay</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-sm glass px-md py-3 rounded-xl hover:bg-white/10 transition-all border-white/10">
+<span class="material-symbols-outlined text-on-surface text-xl">credit_card</span>
+<span class="text-sm font-semibold">Stripe</span>
+</button>
+</div>
+</section>
+<!-- Top Up Packages -->
+<section>
+<div class="flex justify-between items-center mb-md px-xs">
+<h3 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em]">Top Up Coins</h3>
+<span class="text-xs font-bold text-primary cursor-pointer hover:underline">View All Packages</span>
+</div>
+<div class="grid grid-cols-1 gap-sm">
+<!-- Package 1 -->
+<div class="glass flex items-center justify-between p-md rounded-2xl hover:border-primary/50 transition-all group cursor-pointer border-white/5">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">monetization_on</span>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface">100 Coins</p>
+<p class="text-xs text-on-surface-variant">Basic Pack</p>
+</div>
+</div>
+<div class="text-right">
+<button class="gradient-brand text-white font-bold text-sm px-6 py-2.5 rounded-xl group-hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+                            $0.99
+                        </button>
+</div>
+</div>
+<!-- Package 2 - Popular -->
+<div class="glass relative flex items-center justify-between p-md rounded-2xl border-primary/40 bg-primary/5 hover:border-primary/60 transition-all group cursor-pointer overflow-hidden">
+<div class="absolute top-0 right-0">
+<div class="bg-primary text-white text-[9px] font-black px-4 py-1.5 rounded-bl-xl uppercase tracking-wider">Best Value</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface">500 Coins</p>
+<p class="text-xs text-on-surface-variant">Creator Pack</p>
+</div>
+</div>
+<div class="text-right">
+<button class="gradient-brand text-white font-bold text-sm px-6 py-2.5 rounded-xl group-hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+                            $4.99
+                        </button>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="glass flex items-center justify-between p-md rounded-2xl hover:border-primary/50 transition-all group cursor-pointer border-white/5">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">savings</span>
+</div>
+<div>
+<p class="text-lg font-bold text-on-surface">1,000 Coins</p>
+<p class="text-xs text-on-surface-variant">Elite Pack</p>
+</div>
+</div>
+<div class="text-right">
+<button class="gradient-brand text-white font-bold text-sm px-6 py-2.5 rounded-xl group-hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+                            $9.99
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Transaction History -->
+<section>
+<h3 class="text-[10px] font-bold text-on-surface-variant mb-md uppercase tracking-[0.2em] px-xs">Recent Activity</h3>
+<div class="space-y-sm">
+<!-- Transaction Item -->
+<div class="flex items-center justify-between py-4 border-b border-white/5">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full glass-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl">shopping_cart</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Purchase: 500 Coins</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Oct 24, 2023 • 14:20</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface">-$4.99</p>
+<span class="text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">Success</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-4 border-b border-white/5">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full glass-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">feature_search</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Gift: Super Nova to @Liza_Stream</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Oct 23, 2023 • 22:15</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-primary">-250 Coins</p>
+<span class="text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold">Success</span>
+</div>
+</div>
+<div class="flex items-center justify-between py-4 border-b border-white/5">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full glass-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-xl">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Withdrawal to Bank</p>
+<p class="text-[10px] text-on-surface-variant font-medium">Oct 22, 2023 • 09:12</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-on-surface">-$120.00</p>
+<span class="text-[9px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold">Pending</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-3 text-xs text-on-surface-variant hover:text-primary transition-colors font-bold uppercase tracking-widest">
+                Download Statement (PDF)
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-background/90 backdrop-blur-2xl border-t border-white/5 pt-3 pb-safe px-6 h-20">
+<div class="max-w-md mx-auto flex justify-between items-center h-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">explore</span>
+<span class="text-[10px] font-bold">Discover</span>
+</a>
+<a class="relative -top-6" href="#">
+<div class="gradient-brand w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-primary/40 ring-4 ring-background border border-white/20">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</div>
+<span class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-black text-primary uppercase tracking-tighter">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">mail</span>
+<span class="text-[10px] font-bold">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all gap-1" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</nav>
+<!-- Interaction Script -->
+<script>
+        document.querySelectorAll('.glass').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        window.onload = () => {
+            const balanceText = document.querySelector('.coin-glow');
+            if(balanceText) animateValue(balanceText, 10000, 12450, 1500);
+        };
+    </script>
+</body></html>

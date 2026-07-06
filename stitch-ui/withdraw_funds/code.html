@@ -1,0 +1,260 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Withdraw Diamonds - FLIQQ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-panel-heavy {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .vibrant-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+        }
+        .diamond-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        body {
+            background-color: #0A0A0F;
+            color: #e8dfee;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#4a4455",
+                      "primary-fixed-dim": "#d2bbff",
+                      "on-background": "#e8dfee",
+                      "surface": "#15121b",
+                      "surface-container-highest": "#37333e",
+                      "on-tertiary-fixed": "#301400",
+                      "background": "#15121b",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-secondary-fixed": "#00174b",
+                      "secondary": "#b4c5ff",
+                      "on-primary": "#3f008e",
+                      "secondary-container": "#0053db",
+                      "on-surface": "#e8dfee",
+                      "tertiary": "#ffb784",
+                      "surface-variant": "#37333e",
+                      "on-tertiary": "#4f2500",
+                      "on-surface-variant": "#ccc3d8",
+                      "inverse-primary": "#732ee4",
+                      "inverse-surface": "#e8dfee",
+                      "surface-bright": "#3c3742",
+                      "inverse-on-surface": "#332f39",
+                      "tertiary-container": "#a15100",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "on-primary-fixed-variant": "#5a00c6",
+                      "tertiary-fixed-dim": "#ffb784",
+                      "primary": "#d2bbff",
+                      "outline": "#958da1",
+                      "tertiary-fixed": "#ffdcc6",
+                      "primary-container": "#7c3aed",
+                      "on-error-container": "#ffdad6",
+                      "on-error": "#690005",
+                      "surface-tint": "#d2bbff",
+                      "on-secondary": "#002a78",
+                      "on-secondary-fixed-variant": "#003ea8",
+                      "on-secondary-container": "#cdd7ff",
+                      "surface-container-low": "#1d1a24",
+                      "on-tertiary-container": "#ffe0cd",
+                      "on-primary-fixed": "#25005a",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "error-container": "#93000a",
+                      "surface-container": "#221e28",
+                      "primary-fixed": "#eaddff",
+                      "surface-container-lowest": "#100d16",
+                      "error": "#ffb4ab",
+                      "surface-dim": "#15121b",
+                      "on-primary-container": "#ede0ff",
+                      "surface-container-high": "#2c2833"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "container-margin": "24px",
+                      "xl": "40px",
+                      "unit": "4px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "title-md": ["Geist"],
+                      "body-sm": ["Inter"],
+                      "headline-lg-mobile": ["Geist"],
+                      "headline-lg": ["Geist"],
+                      "chat-msg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-caps": ["Geist"],
+                      "display-lg": ["Geist"]
+              },
+              "fontSize": {
+                      "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="min-h-screen">
+<!-- Top AppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-sm w-full bg-transparent">
+<div class="flex items-center gap-md">
+<button aria-label="Go back" class="material-symbols-outlined hover:opacity-80 transition-opacity text-[#ff8c00]">arrow_back</button>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold bg-gradient-to-r from-[#ff8c00] to-[#ff4500] bg-clip-text text-transparent">FLIQQ Live</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="A professional high-fidelity avatar of a digital creator, illuminated by cinematic purple and blue neon lights in a dark studio setting. The lighting reflects off their sharp features, creating a premium and tech-focused aesthetic. The background is a soft, deep-space blur, maintaining focus on the subject's modern and stylish appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6xctWaLmsFOLNZ57YIEaAjc_t-sRg-PA768p-euqjNuDa3vxglmSB9j7j3x-QHD2_j0bmG0pBOgY3cCtkPUAcdWkGW1-0Q_WqB7HZYaqmlG_zpLEyhSderV3cYVUYNH7jc7xAbjWIDCWObfvC5Z6av0NE8RFwr-n1VdUPRqOXs8NnjEkJcnxfbKngvfXqHHjB4AbIB5liFKBdG4sMtxbNLDIvpj5JwnJEn1YX0DgYMssMnijSzYAEYem_tchl1DVLjGzFXXAr0TVP">
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter max-w-2xl mx-auto">
+<!-- Balance Section -->
+<section class="glass-panel rounded-xl p-lg mb-lg text-center relative overflow-hidden">
+<div class="absolute inset-0 diamond-shimmer opacity-20 pointer-events-none"></div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest mb-sm">Current Balance</p>
+<div class="flex items-center justify-center gap-xs mb-xs">
+<span class="material-symbols-outlined text-primary text-headline-lg-mobile" data-weight="fill">diamond</span>
+<h2 class="font-display-lg text-display-lg text-on-background">12,450</h2>
+</div>
+<p class="font-body-lg text-body-lg text-primary/80">≈ $1,245.00 USD</p>
+</section>
+<!-- Withdrawal Input -->
+<section class="mb-xl">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-md px-1 uppercase">Enter Amount to Withdraw
+<div class="relative group">
+<div class="absolute inset-y-0 left-gutter flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-primary text-headline-lg">diamond</span>
+</div>
+<input class="w-full bg-[#050507] border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded-xl py-xl pl-16 pr-lg text-[40px] font-bold text-on-background transition-all outline-none" id="diamondInput" placeholder="0" type="number" value="1000">
+<div class="absolute inset-y-0 right-gutter flex items-center">
+<button class="font-label-caps text-label-caps hover:text-white transition-colors bg-white/5 px-sm py-xs rounded-full border border-white/10 text-[#ff8c00]" onclick="document.getElementById('diamondInput').value = '12450'">MAX</button>
+</div>
+</div>
+<div class="flex justify-between items-center mt-md px-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant/70">Conversion Rate: 10 Diamonds = $1.00 USD</p>
+<p class="font-body-sm text-body-sm text-primary font-semibold" id="usdValue">Will receive: $100.00 USD</p>
+</div>
+</label></section>
+<!-- Payout Methods -->
+<section class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-md text-title-md text-on-surface">Payout Method</h3>
+<button class="flex items-center gap-xs font-label-caps text-label-caps hover:opacity-80 text-[#ff8c00]">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+                    ADD NEW
+                </button>
+</div>
+<div class="space-y-sm">
+<!-- Method 1: Bank -->
+<label class="glass-panel p-md rounded-xl flex items-center justify-between cursor-pointer hover:bg-white/10 transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">account_balance</span>
+</div>
+<div>
+<p class="font-title-md text-body-lg text-on-surface">Chase Bank •••• 8842</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/60">Estimated: 3-5 business days</p>
+</div>
+</div>
+<input checked="" class="w-5 h-5 text-primary bg-transparent border-outline-variant focus:ring-primary ring-offset-background" name="payout" type="radio">
+</label>
+<!-- Method 2: PayPal -->
+<label class="glass-panel p-md rounded-xl flex items-center justify-between cursor-pointer hover:bg-white/10 transition-colors group">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">payments</span>
+</div>
+<div>
+<p class="font-title-md text-body-lg text-on-surface">PayPal (c***@creator.com)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant/60">Estimated: Instant - 24 hours</p>
+</div>
+</div>
+<input class="w-5 h-5 text-primary bg-transparent border-outline-variant focus:ring-primary ring-offset-background" name="payout" type="radio">
+</label>
+</div>
+</section>
+<!-- Final Action -->
+<div class="mt-xl">
+<button class="vibrant-gradient w-full py-lg rounded-full font-title-md text-on-primary shadow-lg shadow-primary-container/20 hover:scale-[1.02] active:scale-95 transition-all duration-200" style="background: linear-gradient(135deg, rgb(255, 140, 0) 0%, rgb(255, 69, 0) 100%);">
+                Withdraw Now
+            </button>
+<p class="mt-md text-center font-body-sm text-body-sm text-on-surface-variant/50">
+                Secure transaction powered by FLIQQ Pay. <br>
+                By proceeding, you agree to our <a class="underline text-primary/70" href="#">Payment Terms</a>.
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation (Shared Component Mockup) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface/5 backdrop-blur-xl border-t border-white/10"><div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all cursor-pointer"><span class="material-symbols-outlined">grid_view</span></div><div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all cursor-pointer"><span class="material-symbols-outlined">search</span></div><div class="flex flex-col items-center justify-center text-[#ff8c00] scale-110 cursor-pointer"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_box</span></div><div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all cursor-pointer"><span class="material-symbols-outlined">chat_bubble</span></div><div class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all cursor-pointer"><span class="material-symbols-outlined">account_circle</span></div></nav>
+<!-- Floating Atmosphere Elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-secondary-container/10 blur-[120px]"></div>
+</div>
+<script>
+        const diamondInput = document.getElementById('diamondInput');
+        const usdValueDisplay = document.getElementById('usdValue');
+
+        diamondInput.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value) || 0;
+            const usd = (val / 10).toFixed(2);
+            usdValueDisplay.textContent = `Will receive: $${usd} USD`;
+        });
+
+        // Simple button micro-interaction
+        const withdrawBtn = document.querySelector('button.vibrant-gradient');
+        withdrawBtn.addEventListener('click', () => {
+            withdrawBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processing...';
+            setTimeout(() => {
+                withdrawBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Success!';
+                withdrawBtn.classList.remove('vibrant-gradient');
+                withdrawBtn.classList.add('bg-green-500');
+            }, 1500);
+        });
+    </script>
+
+
+</body></html>

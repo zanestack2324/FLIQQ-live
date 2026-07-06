@@ -56,10 +56,18 @@ export default function SignupPage() {
         router.push('/feed')
       }
     } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Failed to create account'
+      const message = err instanceof Error ? err.message : 'Failed to create account. Please try again.'
       toast.error(message)
     } finally {
       setIsLoading(false)
+    }
+  }
+
+  const handleOAuth = async (provider: string) => {
+    try {
+      await signIn(provider, { callbackUrl: '/feed' })
+    } catch {
+      toast.error(`Unable to sign in with ${provider}. Please try again.`)
     }
   }
 
@@ -128,8 +136,8 @@ export default function SignupPage() {
 
       <div className="mt-6">
         <OAuthButtons
-          onGoogleLogin={() => signIn('google', { callbackUrl: '/feed' })}
-          onAppleLogin={() => signIn('apple', { callbackUrl: '/feed' })}
+          onGoogleLogin={() => handleOAuth('google')}
+          onAppleLogin={() => handleOAuth('apple')}
         />
       </div>
 

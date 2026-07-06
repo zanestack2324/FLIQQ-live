@@ -21,6 +21,13 @@ export const metadata: Metadata = {
   },
   description: 'Discover and stream live content on FLIQQ. Join millions of viewers and creators worldwide.',
   keywords: ['live streaming', 'streaming platform', 'fliqq', 'live video', 'creator'],
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    title: 'FLIQQ',
+    statusBarStyle: 'black-translucent',
+  },
+  applicationName: 'FLIQQ',
   openGraph: {
     type: 'website',
     locale: 'en_US',

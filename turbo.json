@@ -16,5 +16,17 @@
       "persistent": true
     }
   },
-  "globalEnv": ["DATABASE_URL", "REDIS_URL", "JWT_SECRET", "NEXT_PUBLIC_API_URL"]
+  "globalEnv": [
+    "DATABASE_URL",
+    "NEXTAUTH_URL",
+    "NEXTAUTH_SECRET",
+    "NEXT_PUBLIC_API_URL",
+    "GOOGLE_CLIENT_ID",
+    "GOOGLE_CLIENT_SECRET",
+    "APPLE_CLIENT_ID",
+    "APPLE_CLIENT_SECRET",
+    "NEXT_PUBLIC_LIVE_SERVICE_URL",
+    "NEXT_PUBLIC_CHAT_SERVICE_URL",
+    "NEXT_PUBLIC_SOCKET_URL"
+  ]
 }

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Chrome, Apple } from 'lucide-react'
 
@@ -10,6 +11,18 @@ interface OAuthButtonsProps {
 }
 
 export function OAuthButtons({ onGoogleLogin, onAppleLogin, isLoading }: OAuthButtonsProps) {
+  const [providers, setProviders] = useState<{ google: boolean; apple: boolean }>({ google: false, apple: false })
+
+  useEffect(() => {
+    fetch('/api/auth/providers')
+      .then(r => r.json())
+      .then(setProviders)
+      .catch(() => {})
+  }, [])
+
+  const hasAny = providers.google || providers.apple
+  if (!hasAny) return null
+
   return (
     <div className="space-y-3">
       <div className="relative">
@@ -21,27 +34,31 @@ export function OAuthButtons({ onGoogleLogin, onAppleLogin, isLoading }: OAuthBu
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
-        <Button
-          variant="secondary"
-          size="lg"
-          onClick={onGoogleLogin}
-          loading={isLoading}
-          className="w-full"
-        >
-          <Chrome size={18} />
-          Google
-        </Button>
-        <Button
-          variant="secondary"
-          size="lg"
-          onClick={onAppleLogin}
-          loading={isLoading}
-          className="w-full"
-        >
-          <Apple size={18} />
-          Apple
-        </Button>
+      <div className={`grid gap-3 ${providers.google && providers.apple ? 'grid-cols-2' : 'grid-cols-1'}`}>
+        {providers.google && (
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={onGoogleLogin}
+            loading={isLoading}
+            className="w-full"
+          >
+            <Chrome size={18} />
+            Google
+          </Button>
+        )}
+        {providers.apple && (
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={onAppleLogin}
+            loading={isLoading}
+            className="w-full"
+          >
+            <Apple size={18} />
+            Apple
+          </Button>
+        )}
       </div>
     </div>
   )

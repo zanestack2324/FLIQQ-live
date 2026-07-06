@@ -1,0 +1,295 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title>FLIQQ - Purchase Coins</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card-hover:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+        }
+        .haptic-btn:active {
+            transform: scale(0.97);
+        }
+        body {
+            background-color: #0A0A0F;
+            color: #e8dfee;
+            overflow-x: hidden;
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#0053db",
+                        "outline-variant": "#4a4455",
+                        "surface-tint": "#d2bbff",
+                        "on-tertiary-fixed": "#301400",
+                        "on-tertiary": "#4f2500",
+                        "inverse-surface": "#e8dfee",
+                        "tertiary": "#ffb784",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "error-container": "#93000a",
+                        "background": "#15121b",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "error": "#ffb4ab",
+                        "surface": "#15121b",
+                        "primary": "#d2bbff",
+                        "on-error": "#690005",
+                        "surface-dim": "#15121b",
+                        "surface-bright": "#3c3742",
+                        "on-secondary-container": "#cdd7ff",
+                        "surface-container-low": "#1d1a24",
+                        "inverse-primary": "#732ee4",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-background": "#e8dfee",
+                        "surface-container-highest": "#37333e",
+                        "secondary": "#b4c5ff",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "inverse-on-surface": "#332f39",
+                        "surface-variant": "#37333e",
+                        "outline": "#958da1",
+                        "on-tertiary-container": "#ffe0cd",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-surface": "#e8dfee",
+                        "on-primary-fixed": "#25005a",
+                        "surface-container-lowest": "#100d16",
+                        "surface-container-high": "#2c2833",
+                        "primary-fixed": "#eaddff",
+                        "on-secondary": "#002a78",
+                        "on-primary": "#3f008e",
+                        "surface-container": "#221e28",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-surface-variant": "#ccc3d8",
+                        "on-secondary-fixed": "#00174b",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "on-primary-container": "#ede0ff",
+                        "primary-container": "#7c3aed",
+                        "tertiary-container": "#a15100",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "xl": "40px",
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "xs": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "chat-msg": ["Inter"],
+                        "label-caps": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "title-md": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-lg">
+<!-- Subtle Background Ambient Animation -->
+<div class="fixed inset-0 -z-10 overflow-hidden opacity-30">
+
+</div>
+<!-- Navigation Shell (Transactional Suppression: Simple Back Button Header) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-sm w-full transition-opacity duration-200">
+<div class="flex items-center gap-md">
+<button class="p-sm glass-card rounded-full flex items-center justify-center haptic-btn" onclick="history.back()" style="color: #ff8c00;">
+<span class="material-symbols-outlined" style="color: rgb(255, 140, 0);">arrow_back</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold bg-gradient-to-r from-[#ff8c00] to-[#ff4500] bg-clip-text text-transparent">FLIQQ Live</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined" data-weight="fill" style="color: #ff8c00;">shield</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SECURE CHECKOUT</span>
+</div>
+</header>
+<main class="pt-32 pb-40 px-gutter max-w-2xl mx-auto flex flex-col gap-lg">
+<!-- Package Summary Section -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-label-caps text-label-caps text-primary tracking-[0.2em] px-xs" style="color: rgb(255, 140, 0);">YOUR SELECTION</h2>
+<div class="glass-card p-lg rounded-xl flex items-center justify-between group overflow-hidden relative">
+<!-- Decorative background pulse -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="flex items-center gap-md relative z-10">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-4xl text-primary" data-weight="fill" style="color: rgb(255, 140, 0);">token</span>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">5,000 Fliqq Coins</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Best Value Creator Pack</p>
+</div>
+</div>
+<div class="text-right relative z-10">
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-primary" style="color: rgb(255, 140, 0);">$49.99</p>
+<p class="font-label-caps text-[10px] text-tertiary">VAT INCLUDED</p>
+</div>
+</div>
+</section>
+<!-- Payment Method Selection -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-label-caps text-label-caps text-primary tracking-[0.2em] px-xs uppercase" style="color: rgb(255, 140, 0);">Payment Method</h2>
+<div class="flex flex-col gap-sm">
+<!-- Apple Pay (Quick Action) -->
+<button class="w-full glass-card glass-card-hover p-md rounded-xl flex items-center justify-between haptic-btn transition-all group" onclick="selectMethod(this)">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-white text-black rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">apps</span>
+</div>
+<span class="font-title-md text-title-md">Apple Pay</span>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant group-[.selected]:border-primary group-[.selected]:bg-primary flex items-center justify-center transition-colors">
+<div class="w-2 h-2 rounded-full bg-background opacity-0 group-[.selected]:opacity-100"></div>
+</div>
+</button>
+<!-- Stored Card -->
+<button class="w-full glass-card glass-card-hover p-md rounded-xl flex items-center justify-between haptic-btn transition-all group selected" onclick="selectMethod(this)">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 bg-secondary-container/20 rounded-lg flex items-center justify-center border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary">credit_card</span>
+</div>
+<div>
+<span class="font-title-md text-title-md block text-left">•••• 4242</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Exp 12/26</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant border-primary bg-primary flex items-center justify-center transition-colors" style="background-color: rgb(255, 140, 0); border-color: rgb(255, 140, 0);">
+<div class="w-2 h-2 rounded-full bg-background opacity-100"></div>
+</div>
+</button>
+<!-- Add New -->
+<button class="w-full border border-dashed border-outline-variant p-md rounded-xl flex items-center justify-center gap-sm text-on-surface-variant hover:border-primary hover:text-primary transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">add_circle</span>
+<span class="font-label-caps text-label-caps">Add New Method</span>
+</button>
+</div>
+</section>
+<!-- Trust Badges -->
+<section class="flex justify-center items-center gap-xl py-md opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex flex-col items-center gap-xs">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<span class="text-[10px] font-label-caps">PCI-DSS</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="material-symbols-outlined text-3xl">lock</span>
+<span class="text-[10px] font-label-caps">ENCRYPTED</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="material-symbols-outlined text-3xl">payments</span>
+<span class="text-[10px] font-label-caps">STRIPE</span>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 glass-card border-t border-white/10 pt-lg pb-safe px-gutter flex flex-col gap-md pb-40">
+<div class="flex justify-between items-center px-sm">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Total Due</span>
+<span class="font-headline-lg text-headline-lg text-on-surface">$49.99</span>
+</div>
+<button class="primary-gradient w-full py-lg rounded-xl flex items-center justify-center gap-md haptic-btn shadow-[0_0_40px_rgba(124,58,237,0.3)] transition-all overflow-hidden relative group" id="buyBtn" style="background: linear-gradient(135deg, rgb(255, 140, 0) 0%, rgb(255, 69, 0) 100%); box-shadow: rgba(255, 140, 0, 0.3) 0px 0px 40px;">
+<span class="font-title-md text-title-md font-bold text-white relative z-10" id="btnText">BUY NOW</span>
+<span class="material-symbols-outlined text-white relative z-10" id="btnIcon">arrow_forward</span>
+<!-- Shimmer Effect -->
+<div class="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+</button>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant/60 pb-sm">
+            By clicking "Buy Now", you agree to FLIQQ's Terms of Sale.
+        </p>
+</div>
+<script>
+        function selectMethod(el) {
+            // Remove selected class from all siblings
+            const parent = el.parentElement;
+            parent.querySelectorAll('.group').forEach(item => {
+                item.classList.remove('selected');
+                const circle = item.querySelector('.w-6.h-6');
+                if (circle) {
+                    circle.classList.remove('border-primary', 'bg-primary');
+                    circle.classList.add('border-outline-variant');
+                    circle.querySelector('div').classList.add('opacity-0');
+                }
+            });
+
+            // Add selected class to clicked
+            el.classList.add('selected');
+            const circle = el.querySelector('.w-6.h-6');
+            if (circle) {
+                circle.classList.add('border-primary', 'bg-primary');
+                circle.classList.remove('border-outline-variant');
+                circle.querySelector('div').classList.remove('opacity-0');
+            }
+        }
+
+        const buyBtn = document.getElementById('buyBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
+
+        buyBtn.addEventListener('click', () => {
+            // Simple loading state simulation
+            btnText.textContent = "PROCESSING...";
+            btnIcon.textContent = "sync";
+            btnIcon.classList.add('animate-spin');
+            buyBtn.style.pointerEvents = 'none';
+            buyBtn.style.opacity = '0.8';
+
+            setTimeout(() => {
+                btnText.textContent = "SUCCESSFUL";
+                btnIcon.textContent = "check_circle";
+                btnIcon.classList.remove('animate-spin');
+                buyBtn.style.background = '#10b981'; // Green for success
+                
+                // Redirect or show success modal
+                setTimeout(() => {
+                    alert('Purchase confirmed! 5,000 Coins added to your account.');
+                    window.location.reload();
+                }, 1000);
+            }, 2000);
+        });
+    </script>
+
+
+</body></html>

@@ -21,12 +21,28 @@ import {
   Heart,
   Clock,
   ThumbsUp,
+  Medal,
+  Sparkles,
+  Crown,
+  Gift,
+  Zap,
+  Film,
+  Scissors,
 } from 'lucide-react'
 
 const mainLinks = [
   { href: '/feed', label: 'Home', icon: Home },
   { href: '/feed?sort=trending', label: 'Trending', icon: Flame },
   { href: '/feed?sort=popular', label: 'Popular', icon: TrendingUp },
+  { href: '/leaderboard', label: 'Leaderboard', icon: Medal },
+  { href: '/challenges', label: 'Challenges', icon: Sparkles },
+]
+
+const extrasLinks = [
+  { href: '/subscriptions', label: 'Subscriptions', icon: Crown },
+  { href: '/referrals', label: 'Refer & Earn', icon: Gift },
+  { href: '/pk-battles', label: 'PK Battles', icon: Zap },
+  { href: '/clips', label: 'Clips & VODs', icon: Scissors },
 ]
 
 const categories = [
@@ -75,6 +91,13 @@ export function Sidebar({ isMobile }: SidebarProps) {
       <div className="p-4 space-y-1">
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 mb-2">Discover</p>
         {discoverLinks.map((link) => (
+          <SidebarLink key={link.href} {...link} current={pathname} />
+        ))}
+      </div>
+
+      <div className="px-4 space-y-1">
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-3 mb-2">More</p>
+        {extrasLinks.map((link) => (
           <SidebarLink key={link.href} {...link} current={pathname} />
         ))}
       </div>

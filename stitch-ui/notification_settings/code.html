@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLIQQ | Notification Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#15121b",
+                    "primary": "#d2bbff",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#3c3742",
+                    "surface-dim": "#15121b",
+                    "surface-container-low": "#1d1a24",
+                    "on-secondary-container": "#cdd7ff",
+                    "outline-variant": "#4a4455",
+                    "secondary-container": "#0053db",
+                    "surface-tint": "#d2bbff",
+                    "on-tertiary-fixed": "#301400",
+                    "on-tertiary": "#4f2500",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "inverse-surface": "#e8dfee",
+                    "tertiary": "#ffb784",
+                    "error-container": "#93000a",
+                    "background": "#15121b",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "on-surface": "#e8dfee",
+                    "on-primary-fixed": "#25005a",
+                    "surface-container-lowest": "#100d16",
+                    "surface-container-high": "#2c2833",
+                    "surface-container": "#221e28",
+                    "secondary-fixed": "#dbe1ff",
+                    "on-surface-variant": "#ccc3d8",
+                    "on-secondary-fixed": "#00174b",
+                    "primary-fixed": "#eaddff",
+                    "on-secondary": "#002a78",
+                    "on-primary": "#3f008e",
+                    "tertiary-container": "#a15100",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb784",
+                    "on-primary-container": "#ede0ff",
+                    "primary-container": "#7c3aed",
+                    "tertiary-fixed": "#ffdcc6",
+                    "inverse-primary": "#732ee4",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "inverse-on-surface": "#332f39",
+                    "on-background": "#e8dfee",
+                    "surface-container-highest": "#37333e",
+                    "secondary": "#b4c5ff",
+                    "primary-fixed-dim": "#d2bbff",
+                    "outline": "#958da1",
+                    "on-tertiary-container": "#ffe0cd",
+                    "surface-variant": "#37333e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "unit": "4px",
+                    "sm": "8px",
+                    "xl": "40px",
+                    "md": "16px",
+                    "container-margin": "24px",
+                    "xs": "4px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "chat-msg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Geist"],
+                    "title-md": ["Geist"],
+                    "label-caps": ["Geist"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0F;
+            color: #e8dfee;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-overlay {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .vibrant-gradient {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+        }
+        .toggle-checkbox:checked + .toggle-slot {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+        }
+        .toggle-checkbox:checked + .toggle-slot .toggle-dot {
+            transform: translateX(1.5rem);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-lg text-body-lg">
+<!-- Header Navigation -->
+<header class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-gutter py-sm w-full transition-opacity duration-200">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-card hover:opacity-80 transition-all">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold text-primary">FLIQQ</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a modern digital creator with neon purple ambient lighting. The person has a confident expression and is wearing sleek black techwear. The background is a dark, minimalist studio with subtle geometric light patterns reflecting off a glass surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAiv6t_ZTmXOjnLgJElvAJP2NBhIzGczMZ1QuEVqjA6DLG6tQLlh0mUaVvZEEZE5uGwVXLwlYEL4Vh3Qc2AHbJDFR8S5tlJwcxxUOKUlVyQKmyFQ79tZgLZ6E6mBrBalpMb1gL-oj-2eJU-pnJ_Ju3Kb_mtI-J3EIC-_YS12QeXhUTJTjoCTxDbJF1qZ4CWh3cAKlQlVp9i2vmg_lrXdvpmYihWtQhv8Kzkyck2sB--u9j0nvgnEW_SxZaxuRzaHKooWgRkqzVwGrs"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 max-w-2xl mx-auto space-y-6">
+<!-- Status Banner -->
+<div class="glass-card rounded-xl p-4 flex items-center gap-4 border-l-4 border-primary">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications_active</span>
+</div>
+<div class="flex-1">
+<h3 class="font-title-md text-title-md text-primary">Push Notifications</h3>
+<p class="text-body-sm text-on-surface-variant">Permissions are active. You're set to receive updates.</p>
+</div>
+<button class="text-primary text-label-caps font-label-caps tracking-widest px-3 py-2 hover:bg-primary/10 rounded-lg transition-colors">MANAGE</button>
+</div>
+<!-- Section: Activity Notifications -->
+<section class="space-y-4">
+<h2 class="text-label-caps font-label-caps text-on-surface-variant/60 uppercase px-1">Alert Preferences</h2>
+<div class="glass-card rounded-xl overflow-hidden divide-y divide-white/5">
+<!-- Toggle Item: Live Stream Alerts -->
+<div class="flex items-center justify-between p-5 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">sensors</span>
+</div>
+<div>
+<p class="font-title-md text-title-md">Live Stream Alerts</p>
+<p class="text-body-sm text-on-surface-variant/70">Get notified when creators you follow go live</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-all toggle-slot border border-white/10">
+<div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-all toggle-dot shadow-md"></div>
+</div>
+</label>
+</div>
+<!-- Toggle Item: New Followers -->
+<div class="flex items-center justify-between p-5 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div>
+<p class="font-title-md text-title-md">New Followers</p>
+<p class="text-body-sm text-on-surface-variant/70">Updates when someone starts following you</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-all toggle-slot border border-white/10">
+<div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-all toggle-dot shadow-md"></div>
+</div>
+</label>
+</div>
+<!-- Toggle Item: Direct Messages -->
+<div class="flex items-center justify-between p-5 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<div>
+<p class="font-title-md text-title-md">Direct Messages</p>
+<p class="text-body-sm text-on-surface-variant/70">Instant alerts for private chats and group DMs</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-all toggle-slot border border-white/10">
+<div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-all toggle-dot shadow-md"></div>
+</div>
+</label>
+</div>
+<!-- Toggle Item: Wallet Transactions -->
+<div class="flex items-center justify-between p-5 hover:bg-white/5 transition-colors group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-high group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-title-md text-title-md">Wallet Transactions</p>
+<p class="text-body-sm text-on-surface-variant/70">Confirmation for tips, payouts, and gifts</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only toggle-checkbox" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-all toggle-slot border border-white/10">
+<div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-all toggle-dot shadow-md"></div>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- Section: Quiet Mode -->
+<section class="space-y-4">
+<h2 class="text-label-caps font-label-caps text-on-surface-variant/60 uppercase px-1">Focus Management</h2>
+<div class="glass-card rounded-xl p-6 space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div>
+<p class="font-title-md text-title-md">Quiet Mode</p>
+<p class="text-body-sm text-on-surface-variant/70">Mute all notifications during specific hours</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only toggle-checkbox" id="quietModeToggle" type="checkbox"/>
+<div class="w-12 h-6 bg-surface-container-highest rounded-full transition-all toggle-slot border border-white/10">
+<div class="absolute top-1 left-1 w-4 h-4 bg-white rounded-full transition-all toggle-dot shadow-md"></div>
+</div>
+</label>
+</div>
+<div class="pt-6 border-t border-white/5 space-y-4 opacity-50 pointer-events-none transition-opacity duration-300" id="quietModeSchedule">
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant/50">START TIME</label>
+<div class="glass-card bg-surface-container-low rounded-lg p-3 flex items-center justify-between border-white/5">
+<span class="font-title-md text-primary">22:00</span>
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-label-caps font-label-caps text-on-surface-variant/50">END TIME</label>
+<div class="glass-card bg-surface-container-low rounded-lg p-3 flex items-center justify-between border-white/5">
+<span class="font-title-md text-primary">07:00</span>
+<span class="material-symbols-outlined text-on-surface-variant">schedule</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary text-label-caps font-label-caps">MON</button>
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary text-label-caps font-label-caps">TUE</button>
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary text-label-caps font-label-caps">WED</button>
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary text-label-caps font-label-caps">THU</button>
+<button class="px-3 py-1.5 rounded-full border border-primary text-primary text-label-caps font-label-caps">FRI</button>
+<button class="px-3 py-1.5 rounded-full border border-white/10 text-on-surface-variant text-label-caps font-label-caps">SAT</button>
+<button class="px-3 py-1.5 rounded-full border border-white/10 text-on-surface-variant text-label-caps font-label-caps">SUN</button>
+</div>
+</div>
+</div>
+</section>
+<footer class="pt-8 text-center">
+<p class="text-body-sm text-on-surface-variant/40">These settings only affect push notifications on this device. Email and SMS settings can be managed in Account Security.</p>
+</footer>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface/5 backdrop-blur-xl border-t border-white/10">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+</nav>
+<script>
+        const quietModeToggle = document.getElementById('quietModeToggle');
+        const quietModeSchedule = document.getElementById('quietModeSchedule');
+
+        quietModeToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                quietModeSchedule.classList.remove('opacity-50', 'pointer-events-none');
+            } else {
+                quietModeSchedule.classList.add('opacity-50', 'pointer-events-none');
+            }
+        });
+
+        // Add micro-interactions to buttons
+        document.querySelectorAll('button, a, label').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.96)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

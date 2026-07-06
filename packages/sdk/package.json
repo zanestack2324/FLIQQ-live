@@ -1,0 +1,23 @@
+{
+  "name": "@fliqq/sdk",
+  "version": "1.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fliqq/shared": "*",
+    "@react-native-async-storage/async-storage": "^2.1.0",
+    "@react-native-community/netinfo": "^11.4.1",
+    "@supabase/supabase-js": "^2.49.0",
+    "react-native-agora": "^4.2.0",
+    "react-native-purchases": "^7.0.0",
+    "@stripe/stripe-react-native": "^0.40.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

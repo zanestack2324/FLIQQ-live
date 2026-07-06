@@ -9,11 +9,14 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp']
   },
   async rewrites() {
-    return [
-      { source: '/api/live/:path*', destination: `${process.env.NEXT_PUBLIC_LIVE_SERVICE_URL || 'http://localhost:3001'}/api/live/:path*` },
-      { source: '/api/chat/:path*', destination: `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL || 'http://localhost:3002'}/api/chat/:path*` },
-      { source: '/api/auth/:path*', destination: `${process.env.NEXTAUTH_URL || 'http://localhost:3000'}/api/auth/:path*` }
-    ];
+    const rewrites = [];
+    if (process.env.NEXT_PUBLIC_LIVE_SERVICE_URL) {
+      rewrites.push({ source: '/api/live/:path*', destination: `${process.env.NEXT_PUBLIC_LIVE_SERVICE_URL}/api/live/:path*` });
+    }
+    if (process.env.NEXT_PUBLIC_CHAT_SERVICE_URL) {
+      rewrites.push({ source: '/api/chat/:path*', destination: `${process.env.NEXT_PUBLIC_CHAT_SERVICE_URL}/api/chat/:path*` });
+    }
+    return rewrites;
   },
   webpack(config) {
     config.externals.push({

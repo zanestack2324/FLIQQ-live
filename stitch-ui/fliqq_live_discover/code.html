@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FLIQQ Live | Discover &amp; Explore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Geist:wght@300;400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#0053db",
+                        "on-primary-fixed": "#25005a",
+                        "primary": "#ff8c00", // Brand Orange
+                        "inverse-on-surface": "#332f39",
+                        "surface-variant": "#221e28",
+                        "secondary": "#b4c5ff",
+                        "on-primary-container": "#fff0e0",
+                        "surface-tint": "#ff8c00",
+                        "surface-container-lowest": "#0a0a0c",
+                        "surface-container": "#15121b",
+                        "on-primary-fixed-variant": "#cc7000",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#a15100",
+                        "on-secondary": "#002a78",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#ffe0cd",
+                        "on-error": "#690005",
+                        "on-surface": "#e8dfee",
+                        "background": "#050507",
+                        "surface": "#0d0d0f",
+                        "on-background": "#e8dfee",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "surface-container-low": "#121016",
+                        "on-surface-variant": "#b0a8ba",
+                        "primary-fixed-dim": "#ffb347",
+                        "on-primary": "#4a2800",
+                        "primary-fixed": "#ffdfb5",
+                        "tertiary": "#ffb784",
+                        "secondary-fixed": "#dbe1ff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary": "#4f2500",
+                        "outline-variant": "#4a4455",
+                        "outline": "#7c7585",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "inverse-surface": "#e8dfee",
+                        "surface-container-high": "#1c1923",
+                        "surface-dim": "#0a0a0c",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-bright": "#2c2833",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#cdd7ff",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "inverse-primary": "#ff8c00",
+                        "surface-container-highest": "#282430",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-secondary-fixed": "#00174b",
+                        "primary-container": "#ff8c00" // Brand Orange Replacement for Purple
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "unit": "4px",
+                        "xl": "40px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist", "Inter"],
+                        "label-caps": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "chat-msg": ["Inter"],
+                        "headline-lg": ["Geist"],
+                        "title-md": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #050507;
+            color: #e8dfee;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .live-ring {
+            box-shadow: 0 0 0 2px #050507, 0 0 0 4px #ff8c00;
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 2px #050507, 0 0 0 4px #ff8c00; }
+            50% { box-shadow: 0 0 0 2px #050507, 0 0 0 6px rgba(255, 140, 0, 0.6); }
+            100% { box-shadow: 0 0 0 2px #050507, 0 0 0 4px #ff8c00; }
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .text-gradient {
+            background: linear-gradient(135deg, #ff8c00 0%, #ffc107 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-32">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-[#050507]/80 backdrop-blur-md flex justify-between items-center px-gutter py-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-yellow-500 overflow-hidden p-0.5">
+<img class="w-full h-full object-cover rounded-[10px]" data-alt="Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLy9WfYWr3Hlhcai4V-33hhZ6ReLO5JRUMgTvl1O_vPS3Bdq86-sPgYhnddReCx1KX9wlodjvF7-YxxKm2sMpnkQdtCTaAVnU2uuUgb0AmqiTZnSDb7vz6tC8iaOKFJlzMsvtB1GcI74K6s_rYDr9meE6kOJd-LCoRLVn6lmkTypPIQNaNCSqDJU0P73Rac-rhYATvUykA1JElnrAuNqIK_CIwdMjyO6Ug97QcLy7oRB_2LJJFX5789nYRehZIbBKsrvHvUI_9uu6j"/>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold tracking-tight">
+<span class="text-gradient">FLIQQ Live</span>
+</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl glass-panel text-primary transition-all duration-200 hover:bg-white/10">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-gutter space-y-8 max-w-7xl mx-auto">
+<!-- Search & Trending Section -->
+<section class="space-y-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline/60 focus:outline-none focus:border-primary/50 transition-all font-body-lg text-body-lg shadow-inner" placeholder="Explore creators, games, or streams..." type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 items-center">
+<span class="text-label-caps font-label-caps text-outline mr-2">TRENDING</span>
+<span class="px-4 py-1.5 glass-panel rounded-full text-[12px] font-medium text-primary">#Cyberpunk2077</span>
+<span class="px-4 py-1.5 glass-panel rounded-full text-[12px] font-medium text-on-surface-variant">#ASMR</span>
+<span class="px-4 py-1.5 glass-panel rounded-full text-[12px] font-medium text-on-surface-variant">#CodeWithMe</span>
+<span class="px-4 py-1.5 glass-panel rounded-full text-[12px] font-medium text-on-surface-variant">#WorldCup</span>
+</div>
+</section>
+<!-- Categories Horizontal Scroll -->
+<section>
+<h2 class="font-title-md text-title-md text-on-surface mb-4 tracking-tight">Categories</h2>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex-none w-32 aspect-square glass-panel rounded-2xl flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/40 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">sports_esports</span>
+<span class="font-label-caps text-label-caps opacity-80">GAMING</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-2xl flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/40 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">music_note</span>
+<span class="font-label-caps text-label-caps opacity-80">MUSIC</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-2xl flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/40 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">self_improvement</span>
+<span class="font-label-caps text-label-caps opacity-80">LIFESTYLE</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-2xl flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/40 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">school</span>
+<span class="font-label-caps text-label-caps opacity-80">EDUCATION</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-2xl flex flex-col items-center justify-center gap-3 group cursor-pointer hover:border-primary/40 hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">sports_soccer</span>
+<span class="font-label-caps text-label-caps opacity-80">SPORTS</span>
+</div>
+</div>
+</section>
+<!-- Featured Streams -->
+<section>
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-title-md text-title-md text-on-surface tracking-tight">Featured Streams</h2>
+<button class="text-primary font-label-caps text-label-caps hover:brightness-125 transition-all">VIEW ALL</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Large Card -->
+<div class="relative rounded-3xl overflow-hidden aspect-video glass-panel group cursor-pointer border-white/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Streaming preview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNYHaGQGfBOqmQzAS1jWVm0NUsSisBoJDrdSR3zujwhafC148iE_n_LICnpXOOybmvUF46KzfX8gz17HGEIS-2s9VhR8nQSR0sg2g4hCJnoAQuARH46IzP8SG1IU69-lSUWj14TAQs0jgMKK1iWVYJ3qI9YX5Io8RYjT2L-5pOgGKhijWL0MnXz_-1S9yQsOH4Kpz-4lubL24DoT8PiewHjDfixqFqVJoiW3iiWphbCSWT3JuvK417B4oykAMK-erJiLIrKKWQ3GQt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary px-2.5 py-1 rounded-lg text-[10px] font-black tracking-widest text-black flex items-center gap-1.5 shadow-lg">
+<span class="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></span> LIVE
+                        </span>
+<span class="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-white border border-white/10">42.5K VIEWERS</span>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white leading-tight mb-2 drop-shadow-md">Midnight Marathon: Final Boss Rush</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm opacity-90">with @PixelPioneer • Action RPG</p>
+</div>
+</div>
+<!-- Stacked smaller cards -->
+<div class="grid grid-cols-1 gap-4">
+<div class="glass-panel rounded-2xl p-4 flex gap-4 cursor-pointer hover:bg-white/5 hover:border-primary/20 transition-all">
+<div class="w-32 aspect-video rounded-xl overflow-hidden flex-none shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Music stream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH1z7Z9QqrZ7dMFGdrlTGCSZlaVCJWI6b30xiI8l3-IkGY9Q2apRiOC3JTixdoWtzAPbr9hM2FzSeaSAfOKwo3KRzDoeV-SOP0uIYMzAujB1YLhRvzQ4ZzcoUCSoC8g6-X3KZ20w8gGhWqPz0zqXCQYR8yir2s4n08pW_lKK55VzO0-9YYmDmxxbw18wk8sUdu6v3VzuchVnjD2fNd75UbZAXwSEqMRXM_3Ea4p5QzLhZLfDLjYHuorDkckirJ6wY6eYa0_UJiEdUX"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-primary font-label-caps text-[10px] mb-1">CREATIVE</span>
+<h4 class="font-title-md text-body-lg text-white font-bold truncate">Lo-Fi Beats &amp; Deep Coding Flow</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm opacity-70">@SynthWaveKid • 12K Live</p>
+</div>
+</div>
+<div class="glass-panel rounded-2xl p-4 flex gap-4 cursor-pointer hover:bg-white/5 hover:border-primary/20 transition-all">
+<div class="w-32 aspect-video rounded-xl overflow-hidden flex-none shadow-lg">
+<img class="w-full h-full object-cover" data-alt="Sports stream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrjTH1M0gvos7almkHu6TpHnHpf1OiflobOcDlfsT9GExaruu4_ZisKzFJsP2h_mgr5HrtO_uqo-LOgVZoLZ1P8ZxtXLE6C7qDU7EEWGneAcp0iOgeD8uO_Db9yVAULKiQUi92nYIcZ4c1IaWbWZSDjQyaCR9ARj8sMgcqYFNx8DOBT6_M2YztPCvvz277-45SIPdYbRU85iwKmnO7o76-xHToKtuu0xt0DxuoAmmmqarPAkbEEEsBZvCqresH9qAUNoT5CT1QInHT"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-primary font-label-caps text-[10px] mb-1">SPORTS</span>
+<h4 class="font-title-md text-body-lg text-white font-bold truncate">Downhill Pro Qualifiers</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm opacity-70">@GravityJunky • 8.4K Live</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Streamers -->
+<section>
+<h2 class="font-title-md text-title-md text-on-surface mb-6 tracking-tight">Trending Streamers</h2>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-all group-hover:scale-105 border-2 border-transparent">
+<img class="w-full h-full object-cover" data-alt="Streamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctRuXAG5dk0Gx-0NbxX-5_5EUM_HXPlPHNJ1rqZiW5Y9vkk2N-aA1ZV2qjHA_jnwyRkNmTwidx1iqkRQ3CNLSlccduVWykmIzp-ZOzQBcnztPD8rONmWgDqa6QvAiWI6_XzyPkE8yraho2_x7VC9uw5Fh4zsHBih5BXmjCWjf462Fx75NXam5BWIboTQIkhroJAi_4Dsroqcl1zgJBt5N6GYq0Moa389_qEUxSHPEUfGtH4ECWfnf0Tgsi0Q4cq7LEFXlMLQjozmn"/>
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-[8px] font-black text-black px-2 py-0.5 rounded-full uppercase shadow-md">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">ValkyrieX</p>
+<p class="text-[10px] text-outline">1.2M FLW</p>
+</div>
+</div>
+<!-- Streamer 2 -->
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-all group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Streamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWc0cbmivaljlVZhpUTcy4S4Nl3RkK5pInjlueoNFDmxoHhX7FnEsN9EaHYr-NMbqGIAvnwV1iL11wzi9xZZ4PoBjcgAK-6Xz5EPUtGDoX3_ivX8GntgnFzFJN8JQ_qq_d6wwPr6NMlwi0mmsFh5XwM3YXitQ9pS-Rk0aM0fx29k3dA-cgpCSi_3jzOS_whdbvxCS768IQMFuIy4F0hzkKeghMU-2DjzSD9L6XVkvnEBR8YE4uTbI5zGRSmshhdZUCtimF3MbrcQKh"/>
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-[8px] font-black text-black px-2 py-0.5 rounded-full uppercase shadow-md">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">CodeMaster</p>
+<p class="text-[10px] text-outline">450K FLW</p>
+</div>
+</div>
+<!-- Streamer 3 -->
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-all group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Streamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKb0turKgTWKRTEbngr1236XkneQ5ivsjzOuKB0VmBQixiLZDjW2uYMYvBYPR_JMKkWqs2RMyG74veY4bVSDxpDrUvifvqPMfJWion7nTb7oTHzvpYWDOuhy07Zk9KmaYD6-GMh9hvwk2ElgWPf2_eUt9shf3kDTZrJO-wsO_Pq1mOGvZLLMXtUqcyZkWei-SDChZQHcsICNPW_g6EudxvPrsyBFOLqZL2OlAUgUAk4MysSZT9SbVuYZC_RywJ613Y5q0OOE1iZ20L"/>
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-[8px] font-black text-black px-2 py-0.5 rounded-full uppercase shadow-md">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">ArtSoul</p>
+<p class="text-[10px] text-outline">89K FLW</p>
+</div>
+</div>
+<!-- Streamer 4 -->
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-all group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Streamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVHJkO4dZ08EW4WUmpExJVHkuvH3OiC9fSYd5Ik9a8nYaH7smOll_o5e8rxKZfXqmupC1WHiO1uyPKOqzcrjQk7pxDnefs1tcNm3WiXk6r07cf3Cm7k4820f2wMlS1rZRk_qAR4mkMzFTe_2HuyulkX3yXfLvScIf1g8JCIQ6otx3Ecwsjt8O7B1S5H5TLeG7UOVYUNqAJP2Rq2XA1sILC9-H_jQnDNXJMJM4ig4dRENdkkjexZfHUMp7u-Y7OPAJJMNOsMayVbKqA"/>
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-[8px] font-black text-black px-2 py-0.5 rounded-full uppercase shadow-md">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">SportScout</p>
+<p class="text-[10px] text-outline">215K FLW</p>
+</div>
+</div>
+<!-- Streamer 5 (Offline) -->
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden opacity-40 grayscale transition-all group-hover:opacity-100 group-hover:grayscale-0 border-2 border-white/10">
+<img class="w-full h-full object-cover" data-alt="Streamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdbnX_9-p6Xln_Py_ZjIs3rPhnJmHTTxd2HadxUkAJgrUvhIjisufiNMXQheaU622of97iFFURwHQKb_mwM8pDpz2VNRl-n64VRL50hY6Zk1USZZ1ZDIeo3WIncQPxBMvWUckH9ZvvjfYH-fQqYvhkBnM37T6eB2oPcqpLR1f7TmP-Ri1U_tGr37pkPnYuGggLEVFSVatxcj2lpaNXwbZYsO50lUCQ3LLc54640A-LksU6O_MXZm6HDdC-u41IizbZ8SurXBF189l"/>
+</div>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-outline/60 truncate w-full">GigaByte</p>
+<p class="text-[10px] text-outline/40">OFFLINE</p>
+</div>
+</div>
+<!-- Streamer 6 -->
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-all group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Streamer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfRulS7eIDBCDqakoYTYhTQkzpwCO8bJye8gC5UfDQfcMjfEIVliM1WlNRege3ILCSQNYJp5A2PY6VRveZBtHlwXq9asCYRhCWhf9lUzTUQW5jIPN0K-Xe3j6nCBchUZq1CwjtcMe90x3n2cCzGcMr8hNQsS4ES0fgwO3xovHLxQeXxnfteqmNokMz0DHIIH2z6IzpfscrXbVIizvNdW02Pkl9Ea6d_UBZwo4W5utMky0uRReXN--Dqdv58oeeKcTCZAVkvr3g8-DJ"/>
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 bg-primary text-[8px] font-black text-black px-2 py-0.5 rounded-full uppercase shadow-md">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">ZenMaster</p>
+<p class="text-[10px] text-outline">12K FLW</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Nearby Section -->
+<section class="pb-20">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h2 class="font-title-md text-title-md text-on-surface tracking-tight">Streams Near You</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="space-y-3 group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden glass-panel relative border-white/5">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Nearby stream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE2mUVAPaKIt-UhLF9PTGu6OgmNh-XLCqijSX8rAY8-fURhmn9Fd-8uUHDSoB5YPFes6xh6IXASk2qC1NpsxOdzAHJWnhdCB4OB0ZzxSxVIuRErn6UYBELSaEVn4-IHwJAwf1sYkohuW2l9qPZYusHPbcuU8CmhHGZvse0CTOgGTBWdKG5D9ylIZroWeMn82JMSNq8ok2oKww5nfyGNyBN72lInmBr2Ntp-2_naloBK_lsyhcU7Y3Dll2-XLR85_3jkAtX6rLzxdoD"/>
+<div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-lg text-[9px] font-bold text-white border border-white/10">0.5km away</div>
+</div>
+<h5 class="font-body-sm text-body-sm font-bold text-white truncate px-1">Late Night Street Food Tour</h5>
+<p class="text-xs text-outline px-1">@CityWalker • 1.2K Viewers</p>
+</div>
+<div class="space-y-3 group cursor-pointer">
+<div class="aspect-video rounded-2xl overflow-hidden glass-panel relative border-white/5">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Nearby stream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVEHXrATm9gBjdsSlkKflq_eNKoA_orT9WZlIV8VEDJIhweuhfURtLi4nKKH_fitGYBID5JAmmBW3Pyg9bUVS3MIiB45bmO6Wr1SQEo5YoKHILovnr3k9op8sRbTGGYhG2ASoYIfW7TlBgDMiXg976pu_XV93Bc0jZgMxIMiAzzr8BG2YR2CQTxrKNPv84zwGhHjdM1bxH6UjmwsBRB9QRBj-XUg5bGfygEhYrYF2AezcOLBOdva00PVV0xC8W098_pFTcqPipcMdA"/>
+<div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-md px-2 py-0.5 rounded-lg text-[9px] font-bold text-white border border-white/10">2.1km away</div>
+</div>
+<h5 class="font-body-sm text-body-sm font-bold text-white truncate px-1">Indie Live: The Basement Tapes</h5>
+<p class="text-xs text-outline px-1">@LocalVibe • 840 Viewers</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Home, Discover, Live, Inbox, Profile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-6 bg-[#0a0a0c]/90 backdrop-blur-2xl border-t border-white/5">
+<a class="flex flex-col items-center justify-center text-primary group transition-all" href="#">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold mt-1 tracking-wider opacity-100 uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-[24px]">explore</span>
+<span class="text-[10px] font-bold mt-1 tracking-wider opacity-0 group-hover:opacity-100 transition-opacity uppercase">Discover</span>
+</a>
+<!-- Live Center Button -->
+<a class="flex flex-col items-center justify-center group" href="#">
+<div class="w-14 h-14 bg-gradient-to-tr from-primary to-yellow-500 rounded-2xl flex items-center justify-center -mt-10 shadow-2xl shadow-primary/30 border-2 border-background transform group-hover:scale-110 transition-all">
+<span class="material-symbols-outlined text-black font-bold text-[32px]">videocam</span>
+</div>
+<span class="text-[10px] font-bold mt-1 tracking-wider text-primary uppercase">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-[24px]">inbox</span>
+<span class="text-[10px] font-bold mt-1 tracking-wider opacity-0 group-hover:opacity-100 transition-opacity uppercase">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/60 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined text-[24px]">person_outline</span>
+<span class="text-[10px] font-bold mt-1 tracking-wider opacity-0 group-hover:opacity-100 transition-opacity uppercase">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for glass cards
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = 'rgba(255, 140, 0, 0.4)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+        });
+    </script>
+</body></html>

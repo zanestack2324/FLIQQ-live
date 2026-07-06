@@ -97,17 +97,17 @@ export const authOptions: NextAuthOptions = {
         }
       },
     }),
-    GoogleProvider({
+    ...(process.env.GOOGLE_CLIENT_ID ? [GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       authorization: {
         params: { scope: 'openid email profile', prompt: 'consent', access_type: 'offline' },
       },
-    }),
-    AppleProvider({
+    })] : []),
+    ...(process.env.APPLE_CLIENT_ID && process.env.APPLE_CLIENT_SECRET ? [AppleProvider({
       clientId: process.env.APPLE_CLIENT_ID!,
       clientSecret: process.env.APPLE_CLIENT_SECRET!,
-    }),
+    })] : []),
   ],
   callbacks: {
     async jwt({ token, user, account, profile }) {

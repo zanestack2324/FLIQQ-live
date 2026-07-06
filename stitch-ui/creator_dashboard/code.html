@@ -1,0 +1,302 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FLIQQ | Creator Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#0053db",
+                    "on-primary-fixed": "#25005a",
+                    "primary": "#d2bbff",
+                    "inverse-on-surface": "#332f39",
+                    "surface-variant": "#37333e",
+                    "secondary": "#b4c5ff",
+                    "on-primary-container": "#ede0ff",
+                    "surface-tint": "#d2bbff",
+                    "surface-container-lowest": "#100d16",
+                    "surface-container": "#221e28",
+                    "on-primary-fixed-variant": "#5a00c6",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-container": "#a15100",
+                    "on-secondary": "#002a78",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#ffe0cd",
+                    "on-error": "#690005",
+                    "on-surface": "#e8dfee",
+                    "background": "#15121b",
+                    "surface": "#15121b",
+                    "on-background": "#e8dfee",
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "surface-container-low": "#1d1a24",
+                    "on-surface-variant": "#ccc3d8",
+                    "primary-fixed-dim": "#d2bbff",
+                    "on-primary": "#3f008e",
+                    "primary-fixed": "#eaddff",
+                    "tertiary": "#ffb784",
+                    "secondary-fixed": "#dbe1ff",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-tertiary": "#4f2500",
+                    "outline-variant": "#4a4455",
+                    "outline": "#958da1",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "inverse-surface": "#e8dfee",
+                    "surface-container-high": "#2c2833",
+                    "surface-dim": "#15121b",
+                    "on-tertiary-fixed": "#301400",
+                    "surface-bright": "#3c3742",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#cdd7ff",
+                    "tertiary-fixed-dim": "#ffb784",
+                    "inverse-primary": "#732ee4",
+                    "surface-container-highest": "#37333e",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "on-secondary-fixed": "#00174b",
+                    "primary-container": "#7c3aed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "container-margin": "24px",
+                    "unit": "4px",
+                    "xl": "40px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Geist"],
+                    "label-caps": ["Geist"],
+                    "body-sm": ["Inter"],
+                    "chat-msg": ["Inter"],
+                    "headline-lg": ["Geist"],
+                    "title-md": ["Geist"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Geist"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0A0A0F;
+            color: #e8dfee;
+            min-height: 100vh;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(210, 187, 255, 0.2); border-radius: 10px; }
+    </style>
+</head>
+<body class="font-body-lg">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-gutter py-sm w-full">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a modern digital creator with colorful neon backlighting. The lighting is dominated by deep purples and electric blues, matching a premium streaming app aesthetic. The creator is smiling confidently, wearing sleek modern tech accessories, set against a dark, out-of-focus high-end gaming setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfBaEYmZahk6O1i0zGowTPTQtvQMmfCPm9aAIupqMw2-sxtldc6wnv7RJx0CA1Hig67cOmOWljpPg26aUD22zDgX4Ez26Zfg-DTmN3hOknm0DsFo3rwa6DC527dZcI2F1hvC9ceX5sLoe8rC1FEuqM1XujityG9XYqGH7ULom0E3jJj898nMb5eAUFuZhgTcy1qHV3k3ur-lH1TgYSiqG0Q4KRwgf688g0qnxNR3hiDNv0LohcxNKdYVgeRQ5P3Vuuh_ny-Vc6xdkm">
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold" style="background: linear-gradient(135deg, rgb(255, 140, 0) 0%, rgb(255, 69, 0) 100%) text; -webkit-text-fill-color: transparent;">FLIQQ Live</h1>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary p-2 hover:opacity-80 transition-opacity duration-200">notifications</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-gutter space-y-lg max-w-4xl mx-auto">
+<!-- Personal Stats Row -->
+<section class="grid grid-cols-2 gap-md">
+<div class="glass p-md rounded-xl flex flex-col items-center justify-center text-center space-y-xs">
+<span class="font-label-caps text-on-surface-variant/60">TOTAL FOLLOWERS</span>
+<span class="font-headline-lg text-primary">124.8K</span>
+</div>
+<div class="glass p-md rounded-xl flex flex-col items-center justify-center text-center space-y-xs">
+<span class="font-label-caps text-on-surface-variant/60">TOTAL DIAMONDS</span>
+<span class="font-headline-lg text-tertiary">842K</span>
+</div>
+</section>
+<!-- Current Balance Card -->
+<section class="relative overflow-hidden glass p-lg rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-lg">
+
+<div class="relative z-10">
+<h2 class="font-label-caps text-on-surface-variant/80 mb-xs">CURRENT BALANCE</h2>
+<div class="flex items-baseline gap-sm">
+<span class="font-display-lg text-white">$12,450.00</span>
+<span class="font-title-md text-secondary">USD</span>
+</div>
+</div>
+<button class="relative z-10 gradient-primary text-white font-bold px-lg py-md rounded-xl hover:scale-105 transition-transform shadow-lg shadow-primary-container/20" style="background: linear-gradient(135deg, rgb(255, 140, 0) 0%, rgb(255, 69, 0) 100%);">
+                Withdraw Funds
+            </button>
+</section>
+<!-- Analytics Graph -->
+<section class="glass p-lg rounded-xl space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-white">Peak Viewers</h3>
+<div class="flex gap-sm">
+<span class="font-label-caps bg-primary/10 text-primary px-sm py-xs rounded">LAST 7 DAYS</span>
+</div>
+</div>
+<div class="h-48 w-full flex items-end justify-between gap-sm pt-md">
+<!-- Bar representation as a sleek chart fallback -->
+<div class="w-full rounded-t-lg h-[40%] hover:bg-primary/40 transition-all duration-300 bg-tertiary"></div>
+<div class="bg-primary/30 w-full rounded-t-lg h-[65%] hover:bg-primary/50 transition-all duration-300 bg-tertiary"></div>
+<div class="bg-primary/40 w-full rounded-t-lg h-[55%] hover:bg-primary/60 transition-all duration-300 bg-tertiary"></div>
+<div class="bg-primary/60 w-full rounded-t-lg h-[85%] hover:bg-primary/80 transition-all duration-300 bg-tertiary"></div>
+<div class="bg-primary/50 w-full rounded-t-lg h-[70%] hover:bg-primary/70 transition-all duration-300 bg-tertiary"></div>
+<div class="bg-primary/80 w-full rounded-t-lg h-[95%] hover:bg-primary transition-all duration-300 border-t-2 border-white/20 bg-tertiary"></div>
+<div class="bg-primary/40 w-full rounded-t-lg h-[60%] hover:bg-primary/60 transition-all duration-300 bg-tertiary"></div>
+</div>
+<div class="flex justify-between px-xs font-label-caps text-on-surface-variant/40">
+<span class="">MON</span><span class="">TUE</span><span class="">WED</span><span class="">THU</span><span class="">FRI</span><span class="text-primary font-bold">SAT</span><span class="">SUN</span>
+</div>
+</section>
+<!-- Recent Streams List -->
+<section class="space-y-md">
+<div class="flex justify-between items-center">
+<h3 class="font-title-md text-white">Recent Streams</h3>
+<button class="text-primary font-label-caps hover:underline">VIEW ALL</button>
+</div>
+<div class="space-y-sm">
+<!-- Stream Card 1 -->
+<div class="glass p-sm rounded-xl flex items-center gap-md group cursor-pointer hover:bg-white/10 transition-colors">
+<div class="w-24 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic thumbnail for a high-energy live gaming stream. The image shows a futuristic sci-fi city with neon lights and a central glowing portal. The style is hyper-detailed 3D render with cinematic bloom and atmospheric fog, using a dark color palette with intense cyan and purple highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEO8q9ztBmje1FZX6w6P8ShdSyY846ctEpZ0vNDLg7G4NQ4X_jdT99wjcN9-_qbAixCgpYHlPYX_3DmXAW7OayPvadFT2kXJV8SwddxoeM9ATcIdk4q6f1s10daccZThoTvbPSBkRGrlxeWbihTVxt_N-erK_SWCx3VxSScUxz5s6xvHMyb2scgPmvyoMUk98DFEAhBRu3yjYIrzHWyrSQRiOKLGLuvJJLM9yJKt-rugt_NMLHFuExyPuZsyTltTHZc_QIlzSCPXSL">
+</div>
+<div class="flex-grow min-w-0">
+<p class="font-title-md text-white truncate text-body-lg">Late Night Synthwave Vibes</p>
+<p class="font-body-sm text-on-surface-variant/60">Oct 24 • 02:45:12</p>
+</div>
+<div class="text-right shrink-0">
+<p class="font-title-md text-primary" style="color: rgb(255, 140, 0);">$420.50</p>
+<p class="font-label-caps text-on-surface-variant/40">EARNED</p>
+</div>
+</div>
+<!-- Stream Card 2 -->
+<div class="glass p-sm rounded-xl flex items-center gap-md group cursor-pointer hover:bg-white/10 transition-colors">
+<div class="w-24 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional-grade live podcast thumbnail. Two high-quality microphones are positioned in front of a blurred background showing an acoustic studio with warm amber lighting. The atmosphere is cozy yet high-tech, with premium audio equipment visible in the shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4tvAlMHHbQvyr_uE7Y4FrTBbskfVfz5QmNoI84P9QCvJrBoQo5ipg7L1sH_xKWXtltcviyT9nRcErwDfjQPjaYGw5uGK9RAI8KVIeMrw4rdKz_4Vw9wwLaFOfNIjcJvMIzkJunNWBakv7j2M4LCWMHn2tMYBeyVf84C4dp91pCD4Et54kXfdButYmBZTkX9XAiFzzt_b6QfVucdKcAJ7NolywgqZQJujf21DwhS19aGOQ9HmwbJ_zLBUayvPdKqOUYcsEav52G2NY">
+</div>
+<div class="flex-grow min-w-0">
+<p class="font-title-md text-white truncate text-body-lg">Tech Talk: Future of AI</p>
+<p class="font-body-sm text-on-surface-variant/60">Oct 22 • 01:20:00</p>
+</div>
+<div class="text-right shrink-0">
+<p class="font-title-md text-primary" style="color: rgb(255, 140, 0);">$185.20</p>
+<p class="font-label-caps text-on-surface-variant/40">EARNED</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Go Live Setup -->
+<section class="glass p-lg rounded-xl space-y-lg border-primary/20">
+<h3 class="font-title-md text-white">Go Live Now</h3>
+<div class="space-y-md">
+<div class="space-y-xs">
+<label class="font-label-caps text-on-surface-variant/60 ml-xs">STREAM TITLE</label>
+<input class="w-full bg-[#050507] border border-white/10 rounded-xl px-md py-sm text-on-surface focus:outline-none focus:border-primary transition-colors" placeholder="Enter an catchy title..." type="text">
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="font-label-caps text-on-surface-variant/60 ml-xs">CATEGORY</label>
+<select class="w-full bg-[#050507] border border-white/10 rounded-xl px-md py-sm text-on-surface focus:outline-none focus:border-primary transition-colors appearance-none">
+<option>Just Chatting</option>
+<option>Gaming</option>
+<option>Creative Arts</option>
+<option>Technology</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-caps text-on-surface-variant/60 ml-xs">THUMBNAIL</label>
+<div class="w-full h-[46px] border-2 border-dashed border-white/10 rounded-xl flex items-center justify-center gap-sm cursor-pointer hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant/60">upload</span>
+<span class="font-body-sm text-on-surface-variant/60">Upload Image</span>
+</div>
+</div>
+</div>
+<button class="w-full py-md rounded-xl font-bold text-white bg-primary-container hover:bg-secondary-container transition-colors mt-md flex items-center justify-center gap-sm" style="background: linear-gradient(135deg, rgb(255, 140, 0) 0%, rgb(255, 69, 0) 100%);">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sensors</span>
+                    GO LIVE
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface/5 backdrop-blur-xl border-t border-white/10">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps font-bold">HOME</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-caps font-bold">EXPLORE</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined text-primary scale-125" style="color: rgb(255, 140, 0); font-variation-settings: &quot;FILL&quot; 1;">add_circle</span>
+<span class="font-label-caps mt-1 font-bold">LIVE</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary transition-all">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-caps font-bold" style="opacity: 0;">INBOX</span>
+</button>
+<!-- Profile Tab (Active) -->
+<button class="flex flex-col items-center justify-center text-primary scale-110 transition-all" style="color: rgb(255, 140, 0);">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-caps font-bold">PROFILE</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for withdrawal balance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const balanceEl = document.querySelector('.font-display-lg');
+            if (balanceEl) {
+                let target = 12450;
+                let current = 0;
+                let step = 155;
+                const interval = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(interval);
+                    }
+                    balanceEl.innerText = '$' + current.toLocaleString('en-US', { minimumFractionDigits: 2 });
+                }, 20);
+            }
+        });
+    </script>
+
+
+</body></html>

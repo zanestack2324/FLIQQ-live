@@ -1,0 +1,13 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "../../node_modules/@types"],
+    "paths": {
+      "@fliqq/shared": ["../../packages/shared/src"],
+      "@fliqq/sdk": ["../../packages/sdk/src"]
+    }
+  }
+}

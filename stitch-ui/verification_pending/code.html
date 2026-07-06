@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #d2bbff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .success-glow {
+            box-shadow: 0 0 50px -10px rgba(210, 187, 255, 0.3);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.05); }
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 6s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#4a4455",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-background": "#e8dfee",
+                        "surface": "#15121b",
+                        "surface-container-highest": "#37333e",
+                        "on-tertiary-fixed": "#301400",
+                        "background": "#15121b",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#00174b",
+                        "secondary": "#b4c5ff",
+                        "on-primary": "#3f008e",
+                        "secondary-container": "#0053db",
+                        "on-surface": "#e8dfee",
+                        "tertiary": "#ffb784",
+                        "surface-variant": "#37333e",
+                        "on-tertiary": "#4f2500",
+                        "on-surface-variant": "#ccc3d8",
+                        "inverse-primary": "#732ee4",
+                        "inverse-surface": "#e8dfee",
+                        "surface-bright": "#3c3742",
+                        "inverse-on-surface": "#332f39",
+                        "tertiary-container": "#a15100",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "primary": "#d2bbff",
+                        "outline": "#958da1",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-container": "#7c3aed",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-tint": "#d2bbff",
+                        "on-secondary": "#002a78",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-secondary-container": "#cdd7ff",
+                        "surface-container-low": "#1d1a24",
+                        "on-tertiary-container": "#ffe0cd",
+                        "on-primary-fixed": "#25005a",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "error-container": "#93000a",
+                        "surface-container": "#221e28",
+                        "primary-fixed": "#eaddff",
+                        "surface-container-lowest": "#100d16",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#15121b",
+                        "on-primary-container": "#ede0ff",
+                        "surface-container-high": "#2c2833"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-margin": "24px",
+                        "xl": "40px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "chat-msg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-lg text-body-lg overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] rounded-full bg-primary/10 blur-[120px] animate-pulse-slow"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-secondary-container/10 blur-[120px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+</div>
+<!-- Top Navigation Suppression: As per shell visibility rule for transactional success screens -->
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col items-center justify-center relative z-10 px-gutter py-xl">
+<div class="max-w-md w-full flex flex-col items-center space-y-xl text-center">
+<!-- Animated Hero Section -->
+<div class="relative group">
+<!-- Outer Ring Glow -->
+<div class="absolute inset-0 rounded-full bg-primary/20 blur-2xl success-glow animate-pulse-slow"></div>
+<!-- Icon Container -->
+<div class="relative glass-panel w-40 h-40 rounded-full flex items-center justify-center animate-float border-primary/20 overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+<span class="material-symbols-outlined text-[80px] text-primary" style="font-variation-settings: 'FILL' 1;">
+                        verified
+                    </span>
+<!-- Decorative Orbitals -->
+<div class="absolute w-2 h-2 bg-primary rounded-full top-6 right-6 blur-[1px]"></div>
+<div class="absolute w-1 h-1 bg-secondary rounded-full bottom-8 left-8 blur-[1px]"></div>
+</div>
+</div>
+<!-- Text Content -->
+<div class="space-y-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg gradient-text tracking-tight">
+                    Verification Pending
+                </h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg px-4 leading-relaxed">
+                    Great news! Your documents have been successfully submitted and are currently in the queue for priority review.
+                </p>
+</div>
+<!-- Status Card -->
+<div class="glass-panel w-full p-lg rounded-xl space-y-md relative overflow-hidden group hover:border-primary/30 transition-colors duration-300">
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center space-x-md">
+<div class="p-sm bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">schedule</span>
+</div>
+<div class="text-left">
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-xs">ESTIMATED TIME</p>
+<p class="font-title-md text-title-md text-on-surface">24 - 48 Hours</p>
+</div>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center space-x-md">
+<div class="p-sm bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">notification_important</span>
+</div>
+<div class="text-left">
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-xs">NOTIFICATIONS</p>
+<p class="font-title-md text-title-md text-on-surface">Enabled</p>
+</div>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-md">
+<div class="h-full bg-gradient-to-r from-primary to-secondary-container w-[65%] rounded-full relative">
+<div class="absolute top-0 right-0 bottom-0 w-8 bg-white/20 blur-sm animate-[shimmer_2s_infinite]"></div>
+</div>
+</div>
+<style>
+                    @keyframes shimmer {
+                        0% { transform: translateX(-100%); }
+                        100% { transform: translateX(200%); }
+                    }
+                </style>
+<p class="text-left text-on-surface-variant font-body-sm text-body-sm pt-xs italic">
+                    Step 2 of 3: Reviewing Identity Documents
+                </p>
+</div>
+<!-- Action Section -->
+<div class="w-full pt-lg space-y-md">
+<button class="w-full py-md px-lg bg-gradient-to-r from-[#7c3aed] to-[#3f008e] text-white rounded-xl font-title-md text-title-md shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center space-x-md group" onclick="window.location.reload()">
+<span>Return to Wallet</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">account_balance_wallet</span>
+</button>
+<p class="font-body-sm text-body-sm text-on-surface-variant/60">
+                    Need help? <a class="text-primary hover:underline transition-all" href="#">Contact FLIQQ Support</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Content-driven Decorative Cards (Bento style hint) -->
+<div class="fixed -bottom-10 left-1/2 -translate-x-1/2 flex space-x-lg opacity-40 hover:opacity-80 transition-opacity duration-500 max-md:hidden">
+<div class="glass-panel p-md rounded-xl w-48 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary-fixed-dim mb-xs">security</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">SECURE STORAGE</span>
+</div>
+<div class="glass-panel p-md rounded-xl w-48 flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary mb-xs">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">ENCRYPTED KYC</span>
+</div>
+<div class="glass-panel p-md rounded-xl w-48 flex flex-col items-center">
+<span class="material-symbols-outlined text-tertiary mb-xs">hub</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">MULTI-CHAIN</span>
+</div>
+</div>
+<!-- Visual Polish: Noise Texture -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay">
+<svg viewbox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<filter id="noise">
+<feturbulence basefrequency="0.65" numoctaves="3" stitchtiles="stitch" type="fractalNoise"></feturbulence>
+</filter>
+<rect filter="url(#noise)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<script>
+        // Micro-interaction for the success icon
+        document.querySelector('.group').addEventListener('mousemove', (e) => {
+            const icon = e.currentTarget.querySelector('.animate-float');
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = (e.clientX - rect.left - rect.width/2) / 10;
+            const y = (e.clientY - rect.top - rect.height/2) / 10;
+            icon.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        document.querySelector('.group').addEventListener('mouseleave', (e) => {
+            const icon = e.currentTarget.querySelector('.animate-float');
+            icon.style.transform = `translate(0, 0)`;
+        });
+    </script>
+</body></html>

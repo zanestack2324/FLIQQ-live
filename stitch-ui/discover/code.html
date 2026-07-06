@@ -1,0 +1,373 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FLIQQ | Discover &amp; Explore</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#0053db",
+                        "on-primary-fixed": "#25005a",
+                        "primary": "#d2bbff",
+                        "inverse-on-surface": "#332f39",
+                        "surface-variant": "#37333e",
+                        "secondary": "#b4c5ff",
+                        "on-primary-container": "#ede0ff",
+                        "surface-tint": "#d2bbff",
+                        "surface-container-lowest": "#100d16",
+                        "surface-container": "#221e28",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#a15100",
+                        "on-secondary": "#002a78",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#ffe0cd",
+                        "on-error": "#690005",
+                        "on-surface": "#e8dfee",
+                        "background": "#0A0A0F",
+                        "surface": "#15121b",
+                        "on-background": "#e8dfee",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "surface-container-low": "#1d1a24",
+                        "on-surface-variant": "#ccc3d8",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-primary": "#3f008e",
+                        "primary-fixed": "#eaddff",
+                        "tertiary": "#ffb784",
+                        "secondary-fixed": "#dbe1ff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary": "#4f2500",
+                        "outline-variant": "#4a4455",
+                        "outline": "#958da1",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "inverse-surface": "#e8dfee",
+                        "surface-container-high": "#2c2833",
+                        "surface-dim": "#15121b",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-bright": "#3c3742",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#cdd7ff",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "inverse-primary": "#732ee4",
+                        "surface-container-highest": "#37333e",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-secondary-fixed": "#00174b",
+                        "primary-container": "#7c3aed"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "container-margin": "24px",
+                        "unit": "4px",
+                        "xl": "40px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Geist"],
+                        "label-caps": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "chat-msg": ["Inter"],
+                        "headline-lg": ["Geist"],
+                        "title-md": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0F;
+            color: #e8dfee;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .live-ring {
+            box-shadow: 0 0 0 2px #0A0A0F, 0 0 0 4px #7c3aed;
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 2px #0A0A0F, 0 0 0 4px #7c3aed; }
+            50% { box-shadow: 0 0 0 2px #0A0A0F, 0 0 0 6px #d2bbff; }
+            100% { box-shadow: 0 0 0 2px #0A0A0F, 0 0 0 4px #7c3aed; }
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="min-h-screen pb-32">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-transparent flex justify-between items-center px-gutter py-sm w-full">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional close-up studio portrait of a young digital creator with dyed purple hair, wearing sleek modern tech-wear. The lighting is dramatic with purple and cyan rim lights against a deep black background, maintaining the premium dark mode aesthetic of the FLIQQ streaming platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLy9WfYWr3Hlhcai4V-33hhZ6ReLO5JRUMgTvl1O_vPS3Bdq86-sPgYhnddReCx1KX9wlodjvF7-YxxKm2sMpnkQdtCTaAVnU2uuUgb0AmqiTZnSDb7vz6tC8iaOKFJlzMsvtB1GcI74K6s_rYDr9meE6kOJd-LCoRLVn6lmkTypPIQNaNCSqDJU0P73Rac-rhYATvUykA1JElnrAuNqIK_CIwdMjyO6Ug97QcLy7oRB_2LJJFX5789nYRehZIbBKsrvHvUI_9uu6j">
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold tracking-tight bg-gradient-to-r from-[#ff8c00] to-[#ff4500] bg-clip-text text-transparent">FLIQQ Live</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-panel transition-opacity duration-200 hover:opacity-80 text-[#ff8c00]">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-gutter space-y-8 max-w-7xl mx-auto">
+<!-- Search & Trending Section -->
+<section class="space-y-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-[#050507] border border-white/10 rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container transition-colors font-body-lg text-body-lg" placeholder="Explore creators, games, or streams..." type="text">
+</div>
+<div class="flex flex-wrap gap-2 items-center">
+<span class="text-label-caps font-label-caps text-outline mr-2">TRENDING</span>
+<span class="px-3 py-1 glass-panel rounded-full text-body-sm font-body-sm text-[#ff8c00]">#Cyberpunk2077</span>
+<span class="px-3 py-1 glass-panel rounded-full text-body-sm font-body-sm text-on-surface-variant">#ASMR</span>
+<span class="px-3 py-1 glass-panel rounded-full text-body-sm font-body-sm text-on-surface-variant">#CodeWithMe</span>
+<span class="px-3 py-1 glass-panel rounded-full text-body-sm font-body-sm text-on-surface-variant">#WorldCup</span>
+</div>
+</section>
+<!-- Categories Horizontal Scroll -->
+<section>
+<h2 class="font-title-md text-title-md text-on-surface mb-4">Categories</h2>
+<div class="flex gap-4 overflow-x-auto hide-scrollbar pb-2">
+<div class="flex-none w-32 aspect-square glass-panel rounded-xl flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform text-[#ff8c00]">sports_esports</span>
+<span class="font-label-caps text-label-caps">GAMING</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-xl flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform text-[#ff8c00]">music_note</span>
+<span class="font-label-caps text-label-caps">MUSIC</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-xl flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform text-[#ff8c00]">self_improvement</span>
+<span class="font-label-caps text-label-caps">LIFESTYLE</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-xl flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform text-[#ff8c00]">school</span>
+<span class="font-label-caps text-label-caps">EDUCATION</span>
+</div>
+<div class="flex-none w-32 aspect-square glass-panel rounded-xl flex flex-col items-center justify-center gap-2 group cursor-pointer hover:border-primary/50 transition-all">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform text-[#ff8c00]">sports_soccer</span>
+<span class="font-label-caps text-label-caps">SPORTS</span>
+</div>
+</div>
+</section>
+<!-- Featured Streams Bento-ish Grid -->
+<section>
+<div class="flex justify-between items-end mb-4">
+<h2 class="font-title-md text-title-md text-on-surface">Featured Streams</h2>
+<button class="font-label-caps text-label-caps hover:underline text-[#ff8c00]">VIEW ALL</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Large Card -->
+<div class="relative rounded-2xl overflow-hidden aspect-video glass-panel group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-energy live streaming preview showing a professional gamer in a futuristic neon-lit room. The screen displays a fast-paced action game with vibrant purple and electric blue effects. A translucent overlay shows viewer count and a chat stream, perfectly matching the sleek glassmorphism style of the dark UI platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNYHaGQGfBOqmQzAS1jWVm0NUsSisBoJDrdSR3zujwhafC148iE_n_LICnpXOOybmvUF46KzfX8gz17HGEIS-2s9VhR8nQSR0sg2g4hCJnoAQuARH46IzP8SG1IU69-lSUWj14TAQs0jgMKK1iWVYJ3qI9YX5Io8RYjT2L-5pOgGKhijWL0MnXz_-1S9yQsOH4Kpz-4lubL24DoT8PiewHjDfixqFqVJoiW3iiWphbCSWT3JuvK417B4oykAMK-erJiLIrKKWQ3GQt">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-red-600 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest text-white flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> LIVE
+                        </span>
+<span class="bg-black/50 backdrop-blur-md px-2 py-0.5 rounded text-[10px] font-bold text-white">42.5K VIEWERS</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-white leading-tight mb-1">Midnight Marathon: Final Boss Rush</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">with @PixelPioneer • Action RPG</p>
+</div>
+</div>
+<!-- Stacked smaller cards for Desktop / Carousel for Mobile -->
+<div class="grid grid-cols-1 gap-4">
+<div class="glass-panel rounded-xl p-4 flex gap-4 cursor-pointer hover:bg-white/10 transition-colors">
+<div class="w-32 aspect-video rounded-lg overflow-hidden flex-none">
+<img class="w-full h-full object-cover" data-alt="A cinematic preview of a music producer in a dimly lit studio filled with synthesizers and glowing LED panels. Soft purple ambient lighting casts deep shadows, while the producer is seen wearing professional headphones, focused on a digital audio workstation. The image has a premium, professional aesthetic consistent with a high-end streaming service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH1z7Z9QqrZ7dMFGdrlTGCSZlaVCJWI6b30xiI8l3-IkGY9Q2apRiOC3JTixdoWtzAPbr9hM2FzSeaSAfOKwo3KRzDoeV-SOP0uIYMzAujB1YLhRvzQ4ZzcoUCSoC8g6-X3KZ20w8gGhWqPz0zqXCQYR8yir2s4n08pW_lKK55VzO0-9YYmDmxxbw18wk8sUdu6v3VzuchVnjD2fNd75UbZAXwSEqMRXM_3Ea4p5QzLhZLfDLjYHuorDkckirJ6wY6eYa0_UJiEdUX">
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-primary font-label-caps text-[10px] mb-1">CREATIVE</span>
+<h4 class="font-title-md text-body-lg text-white font-bold truncate">Lo-Fi Beats &amp; Deep Coding Flow</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm">@SynthWaveKid • 12K Live</p>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4 flex gap-4 cursor-pointer hover:bg-white/10 transition-colors">
+<div class="w-32 aspect-video rounded-lg overflow-hidden flex-none">
+<img class="w-full h-full object-cover" data-alt="A high-quality action sports live stream preview featuring a downhill mountain biker catching air against a dramatic sunset sky. The lighting is warm and golden, contrasting with the dark forest environment. The UI overlays are minimal, showing a 'Nearby' tag and viewer count in a clean, modern font style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrjTH1M0gvos7almkHu6TpHnHpf1OiflobOcDlfsT9GExaruu4_ZisKzFJsP2h_mgr5HrtO_uqo-LOgVZoLZ1P8ZxtXLE6C7qDU7EEWGneAcp0iOgeD8uO_Db9yVAULKiQUi92nYIcZ4c1IaWbWZSDjQyaCR9ARj8sMgcqYFNx8DOBT6_M2YztPCvvz277-45SIPdYbRU85iwKmnO7o76-xHToKtuu0xt0DxuoAmmmqarPAkbEEEsBZvCqresH9qAUNoT5CT1QInHT">
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-primary font-label-caps text-[10px] mb-1">SPORTS</span>
+<h4 class="font-title-md text-body-lg text-white font-bold truncate">Downhill Pro Qualifiers: Live from Alps</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm">@GravityJunky • 8.4K Live</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Streamers Grid -->
+<section>
+<h2 class="font-title-md text-title-md text-on-surface mb-6">Trending Streamers</h2>
+<div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Avatar of a trendy female streamer with vibrant neon pink highlights in her hair, wearing a stylish headset. The portrait is high-contrast with a cool blue backlighting, creating a professional and immersive digital creator look. The image is circular and framed as a profile picture for a social streaming app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctRuXAG5dk0Gx-0NbxX-5_5EUM_HXPlPHNJ1rqZiW5Y9vkk2N-aA1ZV2qjHA_jnwyRkNmTwidx1iqkRQ3CNLSlccduVWykmIzp-ZOzQBcnztPD8rONmWgDqa6QvAiWI6_XzyPkE8yraho2_x7VC9uw5Fh4zsHBih5BXmjCWjf462Fx75NXam5BWIboTQIkhroJAi_4Dsroqcl1zgJBt5N6GYq0Moa389_qEUxSHPEUfGtH4ECWfnf0Tgsi0Q4cq7LEFXlMLQjozmn">
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-black text-white px-1.5 py-0.5 rounded uppercase bg-[#ff4500]">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">ValkyrieX</p>
+<p class="text-[10px] text-outline">1.2M FLW</p>
+</div>
+</div>
+<!-- Repeat for streamers -->
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="A male streamer avatar with a sharp, modern haircut and a focused expression, wearing gaming glasses. He is illuminated by the glow of his monitors, creating a natural teal and orange lighting effect. The background shows a blurry tech setup with acoustic foam panels, giving a professional studio vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWc0cbmivaljlVZhpUTcy4S4Nl3RkK5pInjlueoNFDmxoHhX7FnEsN9EaHYr-NMbqGIAvnwV1iL11wzi9xZZ4PoBjcgAK-6Xz5EPUtGDoX3_ivX8GntgnFzFJN8JQ_qq_d6wwPr6NMlwi0mmsFh5XwM3YXitQ9pS-Rk0aM0fx29k3dA-cgpCSi_3jzOS_whdbvxCS768IQMFuIy4F0hzkKeghMU-2DjzSD9L6XVkvnEBR8YE4uTbI5zGRSmshhdZUCtimF3MbrcQKh">
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-black text-white px-1.5 py-0.5 rounded uppercase bg-[#ff4500]">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">CodeMaster</p>
+<p class="text-[10px] text-outline">450K FLW</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Close-up avatar of a stylish artist with creative makeup and a beret, looking directly into the camera. Soft, warm lighting creates a welcoming lifestyle aesthetic. The background is a blurred art studio with canvas and paints, maintaining a premium and sophisticated look for the streaming platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKb0turKgTWKRTEbngr1236XkneQ5ivsjzOuKB0VmBQixiLZDjW2uYMYvBYPR_JMKkWqs2RMyG74veY4bVSDxpDrUvifvqPMfJWion7nTb7oTHzvpYWDOuhy07Zk9KmaYD6-GMh9hvwk2ElgWPf2_eUt9shf3kDTZrJO-wsO_Pq1mOGvZLLMXtUqcyZkWei-SDChZQHcsICNPW_g6EudxvPrsyBFOLqZL2OlAUgUAk4MysSZT9SbVuYZC_RywJ613Y5q0OOE1iZ20L">
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-black text-white px-1.5 py-0.5 rounded uppercase bg-[#ff4500]">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">ArtSoul</p>
+<p class="text-[10px] text-outline">89K FLW</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="An energetic sports commentator avatar with a charismatic smile, wearing a professional polo shirt. Bright, high-key lighting gives the image a clean, athletic feel. The setting is a modern sports desk with blurred stadium graphics in the background, reinforcing the diverse content range of the platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVHJkO4dZ08EW4WUmpExJVHkuvH3OiC9fSYd5Ik9a8nYaH7smOll_o5e8rxKZfXqmupC1WHiO1uyPKOqzcrjQk7pxDnefs1tcNm3WiXk6r07cf3Cm7k4820f2wMlS1rZRk_qAR4mkMzFTe_2HuyulkX3yXfLvScIf1g8JCIQ6otx3Ecwsjt8O7B1S5H5TLeG7UOVYUNqAJP2Rq2XA1sILC9-H_jQnDNXJMJM4ig4dRENdkkjexZfHUMp7u-Y7OPAJJMNOsMayVbKqA">
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-black text-white px-1.5 py-0.5 rounded uppercase bg-[#ff4500]">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">SportScout</p>
+<p class="text-[10px] text-outline">215K FLW</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden opacity-50 grayscale transition-all group-hover:opacity-100 group-hover:grayscale-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young tech enthusiast with sleek glasses and a minimalist hoodie. Neutral grey background with soft cinematic lighting. The image is clean and professional, representing an offline creator whose profile still looks premium within the dark mode UI of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdbnX_9-p6Xln_Py_ZjIs3rPhnJmHTTxd2HadxUkAJgrUvhIjisufiNMXQheaU622of97iFFURwHQKb_mwM8pDpz2VNRl-n64VRL50hY6Zk1USZZ1ZDIeo3WIncQPxBMvWUckH9ZvvjfYH-fQqYvhkBnM37T6eB2oPcqpLR1f7TmP-Ri1U_tGr37pkPnYuGggLEVFSVatxcj2lpaNXwbZYsO50lUCQ3LLc54640A-LksU6O_MXZm6HDdC-u41IizbZ8SurXBF189l">
+</div>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-outline truncate w-full">GigaByte</p>
+<p class="text-[10px] text-outline/50">OFFLINE</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 group cursor-pointer">
+<div class="relative">
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden live-ring transition-transform group-hover:scale-105">
+<img class="w-full h-full object-cover" data-alt="Avatar of a serene meditation coach with a peaceful expression, set against a background of soft green plants and natural morning sunlight. The high-quality photography uses a shallow depth of field to make the creator pop, aligning with the lifestyle and education categories of the FLIQQ app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfRulS7eIDBCDqakoYTYhTQkzpwCO8bJye8gC5UfDQfcMjfEIVliM1WlNRege3ILCSQNYJp5A2PY6VRveZBtHlwXq9asCYRhCWhf9lUzTUQW5jIPN0K-Xe3j6nCBchUZq1CwjtcMe90x3n2cCzGcMr8hNQsS4ES0fgwO3xovHLxQeXxnfteqmNokMz0DHIIH2z6IzpfscrXbVIizvNdW02Pkl9Ea6d_UBZwo4W5utMky0uRReXN--Dqdv58oeeKcTCZAVkvr3g8-DJ">
+</div>
+<span class="absolute -bottom-1 left-1/2 -translate-x-1/2 text-[8px] font-black text-white px-1.5 py-0.5 rounded uppercase bg-[#ff4500]">LIVE</span>
+</div>
+<div class="text-center">
+<p class="font-label-caps text-body-sm font-bold text-white truncate w-full">ZenMaster</p>
+<p class="text-[10px] text-outline">12K FLW</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Nearby Section -->
+<section class="pb-12">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h2 class="font-title-md text-title-md text-on-surface">Streams Near You</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="space-y-2 group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden glass-panel relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A handheld-style live stream video frame showing a bustling city night market. The scene is filled with colorful neon signs reflecting on wet pavement, steam rising from food stalls, and a lively crowd. The image conveys a 'real-world' lifestyle broadcast quality, fitting for the 'Nearby' section of a streaming app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE2mUVAPaKIt-UhLF9PTGu6OgmNh-XLCqijSX8rAY8-fURhmn9Fd-8uUHDSoB5YPFes6xh6IXASk2qC1NpsxOdzAHJWnhdCB4OB0ZzxSxVIuRErn6UYBELSaEVn4-IHwJAwf1sYkohuW2l9qPZYusHPbcuU8CmhHGZvse0CTOgGTBWdKG5D9ylIZroWeMn82JMSNq8ok2oKww5nfyGNyBN72lInmBr2Ntp-2_naloBK_lsyhcU7Y3Dll2-XLR85_3jkAtX6rLzxdoD">
+<div class="absolute bottom-2 right-2 bg-black/60 px-1.5 py-0.5 rounded text-[10px] text-white">0.5km away</div>
+</div>
+<h5 class="font-body-sm text-body-sm font-bold text-white truncate">Late Night Street Food Tour</h5>
+<p class="text-xs text-outline">@CityWalker • 1.2K Viewers</p>
+</div>
+<div class="space-y-2 group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden glass-panel relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A live stream shot from a small indie concert venue. The lighting is purple and blue with lens flares from stage lights. A silhouette of a guitarist is visible against the glow. The atmosphere is intimate and high-energy, perfectly capturing a local cultural event broadcasted live on a premium streaming platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVEHXrATm9gBjdsSlkKflq_eNKoA_orT9WZlIV8VEDJIhweuhfURtLi4nKKH_fitGYBID5JAmmBW3Pyg9bUVS3MIiB45bmO6Wr1SQEo5YoKHILovnr3k9op8sRbTGGYhG2ASoYIfW7TlBgDMiXg976pu_XV93Bc0jZgMxIMiAzzr8BG2YR2CQTxrKNPv84zwGhHjdM1bxH6UjmwsBRB9QRBj-XUg5bGfygEhYrYF2AezcOLBOdva00PVV0xC8W098_pFTcqPipcMdA">
+<div class="absolute bottom-2 right-2 bg-black/60 px-1.5 py-0.5 rounded text-[10px] text-white">2.1km away</div>
+</div>
+<h5 class="font-body-sm text-body-sm font-bold text-white truncate">Indie Live: The Basement Tapes</h5>
+<p class="text-xs text-outline">@LocalVibe • 840 Viewers</p>
+</div>
+<!-- Desktop only nearby -->
+<div class="hidden md:block space-y-2 group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden glass-panel relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A first-person view of a skateboarder performing tricks at an urban skatepark during the golden hour. The long shadows and warm lighting create a dynamic, active feel. The background features modern architecture, placing the stream in a contemporary urban environment for local discoverability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA21rB6SQFWK85s_adS2x64PWE325HYNZf1u8OLq278HhZpqVI0iGAYySNWRZLSGGnuL3izanzp8u69N3fBeKJdn9uTMCk3rbYbOETD4il6mHMGEvg4OOZoXrYDwBssQXojk3WLdFvx7JfB9YYeFQtRKfpYno0H6NTxp7aAU80p08CA5LZBTDiRJXlBDtBLijU7j7Po1W6wEAvnKIB0rquboaWVmpKt_vu-QjzZiRorMz-6M3TYXblDo7HUZxYIEVHgVNiUODNJiQ1n">
+<div class="absolute bottom-2 right-2 bg-black/60 px-1.5 py-0.5 rounded text-[10px] text-white">4.5km away</div>
+</div>
+<h5 class="font-body-sm text-body-sm font-bold text-white truncate">Skate Session: Central Park</h5>
+<p class="text-xs text-outline">@BoarderDash • 2.4K Viewers</p>
+</div>
+<div class="hidden md:block space-y-2 group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden glass-panel relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A high-quality top-down stream of a digital artist working on a tablet. The desk is organized with minimal tech accessories and a small plant. The lighting is soft and even, highlighting the creative process in a calm, professional manner, representative of educational or creative local streams." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_08RguyGlOCQPC47CJcTJTtRNl9qEQsfpqz6-ifzm1hmNxlo6elmg11U61X4cJvFqQkFDmgEb0fGgL8AGT1gtBqBvri74m9p4wilkW91ZZrLUA0Ad37pHfwEMs0tSD1rtqshyl05iqO9La2HoEJQLBV6hkpcauuEM-CtH3ytZ_JfJxek5LubWo6GNGu6I-3gLxRtEKPbd7o2gFcPX46_w7yU19v1oyLxH5Xw0kiz2kOR4MYzCagwT8LCSFGVmHFUxxH6B-BlbbdpA">
+<div class="absolute bottom-2 right-2 bg-black/60 px-1.5 py-0.5 rounded text-[10px] text-white">1.8km away</div>
+</div>
+<h5 class="font-body-sm text-body-sm font-bold text-white truncate">Morning Sketch &amp; Chill</h5>
+<p class="text-xs text-outline">@PixelArtLocal • 500 Viewers</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface/5 backdrop-blur-xl border-t border-white/10"><a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 300;">grid_view</span></a><a class="flex flex-col items-center justify-center text-[#ff8c00] scale-110" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 500;">explore</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all" href="#"><div class="w-12 h-12 bg-gradient-to-br from-[#ff8c00] to-[#ff4500] rounded-full flex items-center justify-center -mt-8 shadow-lg shadow-orange-500/40"><span class="material-symbols-outlined text-white">sensors</span></div></a><a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 300;">chat_bubble</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-[#ff8c00] transition-all" href="#"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0, 'wght' 300;">account_circle</span></a></nav>
+<script>
+        // Micro-interactions for glass cards
+        document.querySelectorAll('.glass-panel').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = 'rgba(210, 187, 255, 0.4)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary-container/50');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary-container/50');
+        });
+    </script>
+
+
+</body></html>

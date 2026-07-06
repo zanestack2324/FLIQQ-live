@@ -36,9 +36,17 @@ export default function LoginPage() {
         router.push('/feed')
       }
     } catch {
-      toast.error('Something went wrong. Please try again.')
+      toast.error('Unable to connect. Please make sure the server is running.')
     } finally {
       setIsLoading(false)
+    }
+  }
+
+  const handleOAuth = async (provider: string) => {
+    try {
+      await signIn(provider, { callbackUrl: '/feed' })
+    } catch {
+      toast.error(`Unable to sign in with ${provider}. Please try again.`)
     }
   }
 
@@ -86,8 +94,8 @@ export default function LoginPage() {
 
       <div className="mt-6">
         <OAuthButtons
-          onGoogleLogin={() => signIn('google', { callbackUrl: '/feed' })}
-          onAppleLogin={() => signIn('apple', { callbackUrl: '/feed' })}
+          onGoogleLogin={() => handleOAuth('google')}
+          onAppleLogin={() => handleOAuth('apple')}
         />
       </div>
 

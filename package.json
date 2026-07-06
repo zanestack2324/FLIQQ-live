@@ -29,13 +29,16 @@
     "db:studio:all": "turbo run db:studio --filter=auth-service --filter=user-service --filter=live-service --filter=chat-service --filter=wallet-service --filter=payment-service --filter=notification-service --filter=recommendation-service --filter=moderation-service --filter=admin-service"
   },
   "devDependencies": {
-    "turbo": "^2.0.0",
-    "typescript": "^5.4.0",
+    "@types/node": "^20.12.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "eslint": "^8.57.0",
     "prettier": "^3.2.0",
-    "@types/node": "^20.12.0",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "react-native": "^0.86.0",
+    "react-native-purchases": "^10.4.1",
+    "react-native-purchases-ui": "^10.4.1",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
   },
   "engines": {
     "node": ">=20.0.0"

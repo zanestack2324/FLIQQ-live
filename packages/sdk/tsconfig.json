@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "paths": {
+      "@fliqq/shared": ["../shared/src"]
+    }
+  },
+  "include": ["src"]
+}

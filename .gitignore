@@ -26,3 +26,5 @@ next-env.d.ts
 
 # prisma
 apps/web/prisma/migrations/
+
+.vercel

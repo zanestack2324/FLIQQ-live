@@ -1,0 +1,266 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FLIQQ | Live Stream Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Geist:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-surface {
+            background: rgba(21, 18, 27, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-overlay {
+            background: rgba(21, 18, 27, 0.1);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        @keyframes rotate-disc {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-rotate-disc {
+            animation: rotate-disc 4s linear infinite;
+        }
+        @keyframes pulse-live {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .live-pulse {
+            animation: pulse-live 2s ease-in-out infinite;
+        }
+        body {
+            background-color: #0A0A0F;
+            overflow: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#0053db",
+                      "on-primary-fixed": "#25005a",
+                      "primary": "#d2bbff",
+                      "inverse-on-surface": "#332f39",
+                      "surface-variant": "#37333e",
+                      "secondary": "#b4c5ff",
+                      "on-primary-container": "#ede0ff",
+                      "surface-tint": "#d2bbff",
+                      "surface-container-lowest": "#100d16",
+                      "surface-container": "#221e28",
+                      "on-primary-fixed-variant": "#5a00c6",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#a15100",
+                      "on-secondary": "#002a78",
+                      "error-container": "#93000a",
+                      "on-tertiary-container": "#ffe0cd",
+                      "on-error": "#690005",
+                      "on-surface": "#e8dfee",
+                      "background": "#15121b",
+                      "surface": "#15121b",
+                      "on-background": "#e8dfee",
+                      "on-secondary-fixed-variant": "#003ea8",
+                      "surface-container-low": "#1d1a24",
+                      "on-surface-variant": "#ccc3d8",
+                      "primary-fixed-dim": "#d2bbff",
+                      "on-primary": "#3f008e",
+                      "primary-fixed": "#eaddff",
+                      "tertiary": "#ffb784",
+                      "secondary-fixed": "#dbe1ff",
+                      "tertiary-fixed": "#ffdcc6",
+                      "on-tertiary": "#4f2500",
+                      "outline-variant": "#4a4455",
+                      "outline": "#958da1",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "inverse-surface": "#e8dfee",
+                      "surface-container-high": "#2c2833",
+                      "surface-dim": "#15121b",
+                      "on-tertiary-fixed": "#301400",
+                      "surface-bright": "#3c3742",
+                      "error": "#ffb4ab",
+                      "on-secondary-container": "#cdd7ff",
+                      "tertiary-fixed-dim": "#ffb784",
+                      "inverse-primary": "#732ee4",
+                      "surface-container-highest": "#37333e",
+                      "on-tertiary-fixed-variant": "#713700",
+                      "on-secondary-fixed": "#00174b",
+                      "primary-container": "#7c3aed"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "container-margin": "24px",
+                      "unit": "4px",
+                      "xl": "40px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": ["Geist"],
+                      "label-caps": ["Geist"],
+                      "body-sm": ["Inter"],
+                      "chat-msg": ["Inter"],
+                      "headline-lg": ["Geist"],
+                      "title-md": ["Geist"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Geist"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+            @keyframes marquee {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+        </style></head>
+<body class="antialiased selection:bg-primary selection:text-on-primary" style="font-family: Geist, Inter, sans-serif;">
+<!-- Background WebGL/Animation Placeholder (Atmospheric Overlay) -->
+
+<!-- Full Screen Video Feed -->
+<main class="relative h-screen w-full overflow-hidden bg-black z-10">
+<!-- Video Layer -->
+<div class="absolute inset-0 w-full h-full">
+<div class="w-full h-full bg-cover bg-center" data-alt="A professional live streamer sitting in a high-tech gaming setup with multiple monitors and vibrant neon purple and blue ambient lighting. The creator is wearing a high-end headset and reacting enthusiastically to a high-energy esports match. The scene is cinematic, with shallow depth of field, sharp details on the hardware, and a futuristic glassmorphic UI aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfpUMDLZ2xNTRbR68beEuS4AXf97637dpMfldjrdczY16Yf_tQ24CpybP3dmEJt8JPd8xz3qnoT_kwOv_reqwFiP7TRWwu0AV7iQMpo2q9DJoqnW6SulZf_0uAVLNzs6DRiA0kM6srITlzUijVwpsgKKefR2EHx7pyWW-NxUykJDxuZcXXoTe6w0XlCJwuSHLUXsH5Ea2DitWjAWKUrLEBJaOGEtd-2gv7diG-No8PnoBBh1Ugg898xjDqxh28MqHeuGcI5X2Cx2gM')"></div>
+<!-- Overlay Gradient for Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+</div>
+<!-- Top Navigation Shell (TopAppBar) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-sm w-full bg-transparent">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-primary/30 p-0.5 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A close-up headshot of a stylish professional streamer with a colorful cyberpunk background. The lighting is dominated by soft purple and electric blue tones, reflecting the glassmorphic theme. The streamer has a friendly expression, perfectly centered for a user profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsFV7XKTYiesHNMJ4DJmueNyo26d8RVN4YKJJX0teM1MtOPYU9jstJJCkHznaAobKJo7KCxlm75sjCC1Ny6H82N2CZ0delbayaBjNlIt8p6Zu0U1m0RhAWFvahoPzihy90TVy3e2YuczwmCof1yg9Hxy-HB3cb6sY-EjL2OtHz09lthdKZc8u2DBLTtGdwKMKXXpSlUajMs2CSLA3HUKnQJh-jUYgWrCKWJ8GFIbN0EpQNCSAhKMHW58OQtwtVldIYtM4n-JMtBdhP">
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold" style="background: linear-gradient(to right, rgb(255, 140, 0), rgb(255, 69, 0)) text; -webkit-text-fill-color: transparent;">FLIQQ Live</h1>
+</div>
+<!-- Feed Tabs -->
+<nav class="flex items-center gap-lg absolute left-1/2 -translate-x-1/2">
+<button class="text-on-surface-variant font-title-md transition-all hover:text-white">Following</button>
+<div class="flex flex-col items-center"><button class="font-bold text-title-md" style="color: rgb(255, 140, 0);">For You</button><div class="w-1.5 h-1.5 rounded-full mt-1" style="background-color: rgb(255, 140, 0);"></div></div>
+</nav>
+<button class="text-primary transition-opacity duration-200 hover:opacity-80" style="color: rgb(255, 140, 0);">
+<span class="material-symbols-outlined text-[28px]">notifications</span>
+</button>
+</header>
+<!-- Right Side Action Bar -->
+<aside class="absolute right-gutter bottom-40 z-40 flex flex-col items-center gap-md">
+<!-- Creator Profile -->
+<div class="relative mb-4">
+<div class="w-14 h-14 rounded-full border-2 border-white ring-2 ring-primary/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional digital creator portrait in a futuristic aesthetic, featuring vibrant purple neon highlights on their clothing and face. The background is a blurred high-tech studio environment. This profile image is designed to stand out against a dark streaming interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsdN5ijMdmc5kEM0l0i9oZeuqoEDB52OrClPuuuiAUFg66RZauJ_1-wCZ8vxkxmqfkjZp3UIIBTPE3OIv0-DX5RXVpWejefHd_ULd0ms5br9W-sMEcVEiKCWPIpQqiEZVi97JIDR0bn2eOiquRJsjienwl1b4ShoTgvKrN6dHx2ZqqAVlVZhQfAOBobDUhbTBS0RfFuK7O_lin9oNZyinJMeP9YszTmb96NGafigbrmcs3CcqDw7rCeD4MCZv0MK7W889JXirqKWJH">
+</div>
+<button class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-on-primary rounded-full w-5 h-5 flex items-center justify-center shadow-lg transition-transform hover:scale-110" style="background-color: rgb(255, 140, 0);">
+<span class="material-symbols-outlined text-[16px] font-bold">add</span>
+</button>
+</div>
+<!-- Actions -->
+<div class="flex flex-col items-center gap-xs">
+<button class="glass-surface p-3 rounded-full text-white transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-[28px] group-hover:text-red-500" data-weight="fill">favorite</span>
+</button>
+<span class="font-label-caps text-on-surface">1.2M</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="glass-surface p-3 rounded-full text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">chat_bubble</span>
+</button>
+<span class="font-label-caps text-on-surface">14.8K</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<button class="glass-surface p-3 rounded-full text-white transition-all active:scale-95">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">share</span>
+</button>
+<span class="font-label-caps text-on-surface">Share</span>
+</div>
+<!-- Rotating Music Disc -->
+<div class="mt-4 p-1.5 glass-surface rounded-full animate-rotate-disc">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white/20">
+<img class="w-full h-full object-cover" data-alt="A circular vinyl record label art featuring abstract electric blue and purple waves against a deep black background. The design is sleek and modern, fitting the high-energy vibe of a music stream on a premium video platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4xP2NUcIbguNXbweCsXf9zeyDo8TSicFLjpA_7-ZOl_Nv9TcacAxBrsLRlcvlhnf-seq8sJjtiH0vuGFfsBkzO_3NBdIp39PFKpK36Ysb7GQPSYOLuZKq3Eim9cwUEcATEkvMhXw3phGHO4M7aNenRW2bZtZI_h3sElKqKBvoG98gRAEOc6XA7SsZN2BFlZG_-BqYI01LFWjOmeOLqQ0dCbHBh9gXdOYcxQndekjs4gOirs6fdXf5FSCANt4hQawiOjDh2meu8LI5">
+</div>
+</div>
+</aside>
+<!-- Bottom Overlay Information -->
+<section class="absolute bottom-24 left-gutter right-24 z-40">
+<div class="flex flex-col gap-sm">
+<!-- Live Tag -->
+<div class="flex items-center gap-sm">
+<div class="bg-red-600 px-3 py-1 rounded-lg flex items-center gap-1.5 live-pulse">
+<span class="w-2 h-2 rounded-full bg-white"></span>
+<span class="font-label-caps text-white">LIVE</span>
+</div>
+<div class="glass-surface px-3 py-1 rounded-lg">
+<span class="font-label-caps text-on-surface">12.4K VIEWERS</span>
+</div>
+</div>
+<div class="space-y-1">
+<h2 class="font-title-md text-white flex items-center gap-xs">
+                        @cyber_pulse
+                        <span class="material-symbols-outlined text-primary text-[18px]" data-weight="fill" style="color: rgb(255, 140, 0);">verified</span>
+</h2>
+<p class="font-body-lg text-on-surface-variant line-clamp-2">
+                        Climbing to Immortal rank tonight! 🎮 New setup reveal at 500 bits. Don't forget to join the giveaway in the discord! #Gaming #Live #FLIQQ
+                    </p>
+</div>
+<!-- Music / Audio -->
+<div class="flex items-center gap-sm mt-2 overflow-hidden">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">music_note</span>
+<div class="whitespace-nowrap overflow-hidden">
+<p class="font-body-sm text-on-surface-variant animate-[marquee_10s_linear_infinite]">
+                            Original Audio - Neon Nights (Electronic Mix) - DJ Vortex
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation Shell (BottomNavBar) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe px-4 bg-surface/5 backdrop-blur-xl border-t border-white/10"><button class="flex flex-col items-center justify-center scale-110 transition-all" style="color: rgb(255, 140, 0);"><span class="material-symbols-outlined text-[30px]" data-weight="fill">grid_view</span></button><button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-white transition-all"><span class="material-symbols-outlined text-[30px]">explore_nearby</span></button><button class="flex items-center justify-center -mt-6"><div class="p-4 rounded-2xl shadow-lg active:scale-95 transition-transform" style="background: linear-gradient(to tr, #ff8c00, #ff4500);"><span class="material-symbols-outlined text-white text-[32px]">videocam</span></div></button><button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-white transition-all"><span class="material-symbols-outlined text-[30px]">forum</span></button><button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-white transition-all"><span class="material-symbols-outlined text-[30px]">account_circle</span></button></nav>
+</main>
+<script>
+        // Micro-interaction: Marquee effect for long text
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes marquee {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Simple click interaction for Heart
+        document.querySelector('button .group-hover\\:text-red-500').parentElement.addEventListener('click', function() {
+            const icon = this.querySelector('.material-symbols-outlined');
+            const fill = icon.style.fontVariationSettings.includes("'FILL' 1");
+            icon.style.fontVariationSettings = fill ? "'FILL' 0" : "'FILL' 1";
+            icon.classList.toggle('text-red-500');
+        });
+    </script>
+
+
+</body></html>

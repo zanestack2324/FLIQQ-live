@@ -1,0 +1,233 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>FLIQQ | Identity Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-button {
+            background: linear-gradient(135deg, #7c3aed 0%, #0053db 100%);
+            transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .gradient-button:active {
+            transform: scale(0.96);
+        }
+        .step-glow {
+            box-shadow: 0 0 20px rgba(210, 187, 255, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#4a4455",
+                        "primary-fixed-dim": "#d2bbff",
+                        "on-background": "#e8dfee",
+                        "surface": "#15121b",
+                        "surface-container-highest": "#37333e",
+                        "on-tertiary-fixed": "#301400",
+                        "background": "#15121b",
+                        "secondary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#00174b",
+                        "secondary": "#b4c5ff",
+                        "on-primary": "#3f008e",
+                        "secondary-container": "#0053db",
+                        "on-surface": "#e8dfee",
+                        "tertiary": "#ffb784",
+                        "surface-variant": "#37333e",
+                        "on-tertiary": "#4f2500",
+                        "on-surface-variant": "#ccc3d8",
+                        "inverse-primary": "#732ee4",
+                        "inverse-surface": "#e8dfee",
+                        "surface-bright": "#3c3742",
+                        "inverse-on-surface": "#332f39",
+                        "tertiary-container": "#a15100",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-primary-fixed-variant": "#5a00c6",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "primary": "#d2bbff",
+                        "outline": "#958da1",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-container": "#7c3aed",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "surface-tint": "#d2bbff",
+                        "on-secondary": "#002a78",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-secondary-container": "#cdd7ff",
+                        "surface-container-low": "#1d1a24",
+                        "on-tertiary-container": "#ffe0cd",
+                        "on-primary-fixed": "#25005a",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "error-container": "#93000a",
+                        "surface-container": "#221e28",
+                        "primary-fixed": "#eaddff",
+                        "surface-container-lowest": "#100d16",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#15121b",
+                        "on-primary-container": "#ede0ff",
+                        "surface-container-high": "#2c2833"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.8rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "container-margin": "24px",
+                        "xl": "40px",
+                        "unit": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Geist"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "chat-msg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Geist"],
+                        "display-lg": ["Geist"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "chat-msg": ["13px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-x-hidden font-body-lg text-body-lg">
+<!-- Top Navigation Shell (Suppressing global nav for focused task) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-sm w-full bg-transparent">
+<button class="w-10 h-10 flex items-center justify-center rounded-full glass-card hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[#ff8c00]">arrow_back</span>
+</button>
+<h1 class="font-display-lg text-headline-lg-mobile font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-[#ff8c00] to-[#ff4500]" style="font-family: Geist, serif;">FLIQQ Live</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<main class="relative min-h-screen pt-24 pb-32 px-gutter flex flex-col items-center">
+<!-- Animated Background Decor -->
+<div class="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+
+</div>
+<section class="max-w-xl w-full">
+<!-- Header Section -->
+<div class="text-center mb-12">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-full glass-card mb-6 step-glow">
+<span class="material-symbols-outlined text-[#ff8c00] text-5xl" style="font-variation-settings: &quot;opsz&quot; 48;">verified_user</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-[#ff8c00] mb-4">Identity Verification</h2>
+<p class="text-on-surface-variant font-body-sm text-body-sm max-w-md mx-auto leading-relaxed">
+                    To enable payouts and protect our creator community, we need to verify your identity. This process is secure, encrypted, and typically takes less than 2 minutes.
+                </p>
+</div>
+<!-- Steps Bento Grid -->
+<div class="grid grid-cols-1 gap-4 mb-12">
+<div class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="font-title-md text-title-md text-[#ff8c00]">1</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Personal Information</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Full name, date of birth, and primary address.</p>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-[#ff8c00]">description</span>
+</div>
+<div class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="font-title-md text-title-md text-[#ff8c00]">2</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">ID Document</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A clear photo of your passport or national ID card.</p>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-[#ff8c00]">badge</span>
+</div>
+<div class="glass-card p-6 rounded-xl flex items-center gap-6 group hover:border-primary/30 transition-all duration-300">
+<div class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center flex-shrink-0">
+<span class="font-title-md text-title-md text-[#ff8c00]">3</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-1">Liveness Check</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">A quick 3D face scan to confirm it's really you.</p>
+</div>
+<span class="material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-[#ff8c00]">shape_recognition</span>
+</div>
+</div>
+<!-- Visual Trust Cue -->
+<div class="flex items-center justify-center gap-3 mb-12 py-4 px-6 rounded-full glass-card w-fit mx-auto">
+<span class="material-symbols-outlined text-[#ff8c00]" style="font-variation-settings: &quot;FILL&quot; 1;">lock</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Bank-Grade Encryption Secured</span>
+</div>
+<!-- Action Button -->
+<nav class="fixed bottom-0 left-0 w-full z-50 glass-card border-t border-white/10 px-6 py-3 flex justify-between items-center md:hidden"><button class="flex flex-col items-center gap-1 text-[#ff8c00]"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-label-caps">Home</span></button><button class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-[#ff8c00] transition-colors"><span class="material-symbols-outlined">explore</span><span class="text-[10px] font-label-caps">Discover</span></button><button class="w-12 h-12 rounded-full gradient-button flex items-center justify-center shadow-lg -mt-8 border-4 border-background" style="background: linear-gradient(135deg, #ff8c00 0%, #ff4500 100%);"><span class="material-symbols-outlined text-white">add</span></button><button class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-[#ff8c00] transition-colors"><span class="material-symbols-outlined">mail</span><span class="text-[10px] font-label-caps">Inbox</span></button><button class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-[#ff8c00] transition-colors"><span class="material-symbols-outlined">person</span><span class="text-[10px] font-label-caps">Profile</span></button></nav><div class="fixed bottom-0 left-0 w-full p-gutter glass-card border-none md:relative md:bg-transparent md:p-0 mb-16">
+<button class="gradient-button w-full py-5 rounded-xl flex items-center justify-center gap-3 shadow-2xl" style="background: linear-gradient(135deg, rgb(255, 140, 0) 0%, rgb(255, 69, 0) 100%);">
+<span class="font-title-md text-title-md text-white">Start Verification</span>
+<span class="material-symbols-outlined text-white">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Aesthetic Imagery Component -->
+<div class="hidden lg:block absolute left-12 bottom-12 w-64 h-64 rounded-2xl overflow-hidden glass-card p-2 transform -rotate-6">
+<img class="w-full h-full object-cover rounded-xl opacity-60" data-alt="A macro cinematic shot of a sleek, transparent biometric sensor glowing with a soft purple pulse. The lighting is moody and sophisticated, highlighting the high-tech glass-morphic textures. The scene represents security and premium technology within the dark aesthetic of the FLIQQ platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgVjBPghhePXE0FHxtwUobM8cvURiJgVm6cZEAhsb1UUBrhkGShD6xq6piSFiVK0ZwfKFqdhj90o5LUsOGru4u0yIEmHNFp6po3Oci-Y4HrK2ugllQjv_K6-208Mf-TvR4TTt4HCNs8Bxteve3jwjEtnQfqWNV0SGFgDQLVfdlB_y4B1Y5b3PgCEuYF-dgKmhOB4vmJVXockJVEFVLUgXh0ScQDqKYgKAN81r3k2xza_a2duOQDsBoBAZlxNUA098cVdosXQ-u3zlx">
+</div>
+<div class="hidden lg:block absolute right-12 top-32 w-48 h-48 rounded-2xl overflow-hidden glass-card p-2 transform rotate-12">
+<img class="w-full h-full object-cover rounded-xl opacity-60" data-alt="A premium digital badge floating in 3D space, constructed from translucent frosted glass with electric blue and purple highlights. The badge features a checkmark icon, representing a verified and elite status. The background is a deep, dark violet void with subtle light rays catching the edges of the glass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYWnV_mqhJy6AN5S9_ALbYNfAuGLen6MARvH7hycubo8kS2DYbJah2y0B3EPt_Tn_89AkxqFuO8swr0iTN1IzCI2vcdboGAoRG52xbgDcM9rWmDPNeDeBeX6lNlwgRHofr05bR3Ywt8TZZ2mQSEYV6oKn06NLetBq4HMe4JQjj3gF8xhGLYlSItWdqS-JwD242PcjnGCQEdy-It9ql0cu3dLUrWWuHjEdZuPmI32fyUNuipQJ-lu3o4uOnSwmnOQf1DAIjcqZhNCxV">
+</div>
+</main>
+<!-- Success Animation Trigger (Hidden) -->
+<div class="fixed inset-0 pointer-events-none z-50" id="confetti-container"></div>
+<script>
+        // Simple micro-interaction for button
+        const mainBtn = document.querySelector('.gradient-button');
+        if (mainBtn) {
+            mainBtn.addEventListener('mouseenter', () => {
+                mainBtn.style.boxShadow = '0 0 30px rgba(124, 58, 237, 0.4)';
+            });
+            mainBtn.addEventListener('mouseleave', () => {
+                mainBtn.style.boxShadow = 'none';
+            });
+        }
+
+        // Add subtle parallax to glass cards
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            cards.forEach(card => {
+                if(!card.classList.contains('fixed')) {
+                    card.style.transform = `translate(${x}px, ${y}px)`;
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

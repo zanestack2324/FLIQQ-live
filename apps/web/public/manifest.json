@@ -1,0 +1,22 @@
+{
+  "name": "FLIQQ - Live Streaming Platform",
+  "short_name": "FLIQQ",
+  "description": "Discover and stream live content on FLIQQ. Join millions of viewers and creators worldwide.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#a21caf",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/fliqq-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/fliqq-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
