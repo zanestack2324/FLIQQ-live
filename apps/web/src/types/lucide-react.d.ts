@@ -95,4 +95,5 @@ declare module 'lucide-react' {
   export const Edit2: Icon;
   export const Calendar: Icon;
   export const Filter: Icon;
+  export const Zap: Icon;
 }
