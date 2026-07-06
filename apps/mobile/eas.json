@@ -20,6 +20,16 @@
         "buildConfiguration": "Release"
       }
     },
+    "preview-debug": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk",
+        "gradleCommand": ":app:assembleDebug"
+      },
+      "ios": {
+        "buildConfiguration": "Debug"
+      }
+    },
     "production": {
       "ios": {
         "enterpriseProvisioning": "adhoc"
