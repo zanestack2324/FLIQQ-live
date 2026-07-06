@@ -63,7 +63,7 @@ export default function ClipsPage() {
           <Card key={item.id} className="overflow-hidden hover:border-purple-500/30 transition-all cursor-pointer">
             <div className="relative aspect-video bg-gray-800 flex items-center justify-center">
               <Play size={40} className="text-white/50" />
-              <Badge variant="secondary" className="absolute bottom-2 right-2">{item.duration}</Badge>
+              <Badge className="absolute bottom-2 right-2">{item.duration}</Badge>
             </div>
             <div className="p-4">
               <h3 className="text-sm font-semibold text-white mb-1 line-clamp-2">{item.title}</h3>
